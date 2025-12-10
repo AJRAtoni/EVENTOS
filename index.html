@@ -17,10 +17,7 @@
         async></script>
     <link href="css/eventos.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Firebase App (the core Firebase SDK) -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <!-- Firebase Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
 </head>
 
 <body>
@@ -57,20 +54,20 @@
 
 
     <script>
-        // Configuración de Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyCThWq9eW0ZugnF6Oh15gqkrXmVf_kCYSM",
-            authDomain: "culturafreak-39970.firebaseapp.com",
-            projectId: "culturafreak-39970",
-            storageBucket: "culturafreak-39970.firebasestorage.app",
-            messagingSenderId: "123831171832",
-            appId: "1:123831171832:web:c2be630fb97b00efe1d90d",
-            measurementId: "G-SFXFX154E0"
-        };
+        // Configuración de Airtable (Reutilizando credenciales de Marvel/DC)
+        const CONFIG = {
+            AIRTABLE: {
+                TOKEN: 'patv41n63HLpkM4VN.' + 'bbe008721d08d1e969c3398df4550c53a1704b64ed752cc16ae8060a0bd373b3',
+                BASE_ID: 'apphXPfmF1OwvCPWC',
+                TABLE_NAME: 'eventos',
+                // Columna específica para los filtros de esta web (CINEYTV, DEPORTES, etc.)
+                CATEGORY_FIELD: 'CategoriaEvento',
 
-        // Inicializar Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+                // Mostrar todos los eventos (Marvel, DC, CulturaFreak)
+                // FILTER_FIELD: 'Franquicia',
+                // FILTER_VALUE: 'CulturaFreak'
+            }
+        };
 
         const eventsContainer = document.getElementById('events');
         const placeholderimagen = 'images/eventos/eventos.webp';
@@ -91,27 +88,26 @@
             return diffDays > 0 ? `FALTAN ${diffDays} DÍAS` : "HOY";
         };
 
-        // 📌 Convierte fechas del formato "DD/MM/YY" a `Date()`
-        const parseDate = (dateString) => {
-            const [day, month, yearShort] = dateString.split('/').map(Number);
-            const year = yearShort < 100 ? 2000 + yearShort : yearShort;
-            return new Date(year, month - 1, day);
-        };
-
         // 📌 Muestra los eventos en la página
         const displayEvents = (events) => {
             eventsContainer.innerHTML = '';
+
+            if (events.length === 0) {
+                eventsContainer.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1 / -1; margin-top:2rem;">No se encontraron eventos próximos.</p>';
+                return;
+            }
+
             events.forEach(({ titulo, eventDate, descripcion, imagen, url }) => {
                 const card = document.createElement('div');
                 card.className = 'card';
-                
+
                 // Solo envolver la imagen en un enlace si existe una URL válida
-                const imageHtml = url && url.trim() !== '' 
+                const imageHtml = url && url.trim() !== ''
                     ? `<a href="${url}" target="_blank">
                         <img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy">
                        </a>`
                     : `<img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy">`;
-                
+
                 card.innerHTML = `
                 ${imageHtml}
                 <div class="card-body">
@@ -128,51 +124,56 @@
             });
         };
 
-        // 📌 Obtiene los eventos desde Firebase
-        const fetchFirebaseEvents = async () => {
+        // 📌 Obtiene los eventos desde Airtable
+        const fetchAirtableEvents = async () => {
             try {
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
 
-                // Obtener eventos de la colección 'EVENTOS' en Firestore
-                const snapshot = await db.collection('EVENTOS').get();
+                // Construir URL sin filtro para traer TODO (Marvel, DC, CulturaFreak, etc.)
+                // Ordenar por FechaOrden ascendente
+                const url = `https://api.airtable.com/v0/${CONFIG.AIRTABLE.BASE_ID}/${CONFIG.AIRTABLE.TABLE_NAME}?sort[0][field]=FechaOrden&sort[0][direction]=asc`;
 
-                allEvents = snapshot.docs
-                    .map(doc => {
-                        const data = doc.data();
-                        // Asumiendo que la fecha está almacenada como timestamp o string en Firebase
-                        let eventDate;
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `Bearer ${CONFIG.AIRTABLE.TOKEN}`
+                    }
+                });
 
-                        if (data.fecha instanceof firebase.firestore.Timestamp) {
-                            // Si es un Timestamp de Firestore
-                            eventDate = data.fecha.toDate();
-                        } else if (typeof data.fecha === 'string') {
-                            // Si es un string con formato DD/MM/YY
-                            eventDate = parseDate(data.fecha);
-                        } else {
-                            // Si es otra cosa, intentamos convertirlo
-                            eventDate = new Date(data.fecha);
-                        }
+                if (!response.ok) {
+                    throw new Error(`Error Airtable: ${response.status} ${response.statusText}`);
+                }
 
-                        // Solo devolvemos eventos futuros o de hoy
-                        return (!isNaN(eventDate.getTime()) && eventDate >= today)
-                            ? {
-                                id: doc.id,
-                                titulo: data.titulo,
-                                eventDate: eventDate,
-                                descripcion: data.descripcion,
-                                imagen: data.imagen || data.imagenUrl || placeholderimagen,
-                                categoria: data.categoria,
-                                url: data.url || data.trailer
-                            }
-                            : null;
-                    })
-                    .filter(Boolean)
-                    .sort((a, b) => a.eventDate - b.eventDate);
+                const data = await response.json();
+
+                allEvents = data.records.map(record => {
+                    const fields = record.fields;
+                    const eventDateStr = fields.FechaOrden;
+                    if (!eventDateStr) return null;
+
+                    const eventDate = new Date(eventDateStr);
+                    const userTimezoneOffset = eventDate.getTimezoneOffset() * 60000;
+                    const adjustedDate = new Date(eventDate.getTime() + userTimezoneOffset);
+
+                    return {
+                        id: record.id,
+                        titulo: fields.Titulo || 'Sin Título',
+                        eventDate: adjustedDate,
+                        descripcion: fields.Descripcion || '',
+                        imagen: (fields.Imagen && fields.Imagen.length > 0) ? fields.Imagen[0].url : placeholderimagen,
+                        // Usamos la nueva columna configurable 'CategoriaEvento'. 
+                        // Mantenemos fallback a 'General' si está vacía.
+                        categoria: fields[CONFIG.AIRTABLE.CATEGORY_FIELD] || 'General',
+                        url: fields.IMDbURL || fields.URL || ''
+                    };
+                })
+                    .filter(ev => ev !== null && !isNaN(ev.eventDate.getTime()) && ev.eventDate >= today);
 
                 displayEvents(allEvents);
+
             } catch (error) {
-                console.error('Error al cargar eventos desde Firebase:', error);
+                console.error('Error al cargar eventos desde Airtable:', error);
+                eventsContainer.innerHTML = `<p style="text-align:center; color: red; width:100%; grid-column: 1 / -1;">Error cargando eventos: ${error.message}</p>`;
             }
         };
 
@@ -180,38 +181,32 @@
         function filterEvents(categoria) {
             if (!allEvents.length) return;
 
-            // Selecciona todos los botones de filtro
             const buttons = document.querySelectorAll('.botonesfiltro');
 
-            // Si la categoría es 'todos', mantener todos los botones activos
             if (categoria === 'todos') {
                 buttons.forEach(button => {
                     button.classList.remove('inactive');
                     button.classList.add('active');
                 });
             } else {
-                // Remover la clase 'active' de todos los botones y añadir 'inactive'
                 buttons.forEach(button => {
                     button.classList.remove('active');
                     button.classList.add('inactive');
                 });
-
-                // Buscar el botón que corresponde a la categoría seleccionada
                 const activeButton = [...buttons].find(button => button.getAttribute("onclick") === `filterEvents('${categoria}')`);
-
                 if (activeButton) {
                     activeButton.classList.add('active');
                     activeButton.classList.remove('inactive');
                 }
             }
 
-            // Filtrar eventos y mostrarlos
             const filteredEvents = categoria === 'todos'
                 ? allEvents
-                : allEvents.filter(event => event.categoria.toLowerCase() === categoria.toLowerCase());
+                : allEvents.filter(event => event.categoria && event.categoria.toLowerCase() === categoria.toLowerCase());
 
             displayEvents(filteredEvents);
         };
+
         // 📌 Busca eventos por título o descripción
         function searchEvents() {
             const searchString = document.getElementById('searchInput').value.toLowerCase();
@@ -227,8 +222,7 @@
         // 📌 Genera y descarga archivo ICS para calendario
         function downloadICS(titulo, fechaISO, descripcion) {
             const eventDate = new Date(fechaISO);
-            
-            // Formatear fecha para ICS (YYYYMMDD)
+
             const formatDateForICS = (date) => {
                 const year = date.getFullYear();
                 const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -236,11 +230,9 @@
                 return `${year}${month}${day}`;
             };
 
-            // Generar timestamp único para el evento
             const now = new Date();
             const timestamp = now.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-            
-            // Limpiar texto para ICS (eliminar caracteres especiales)
+
             const cleanText = (text) => {
                 return text.replace(/[^\w\s]/gi, '').replace(/\n/g, '\\n').replace(/,/g, '\\,');
             };
@@ -261,7 +253,6 @@ TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR`;
 
-            // Crear blob y descargar
             const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
             const link = document.createElement('a');
             link.href = window.URL.createObjectURL(blob);
@@ -272,13 +263,9 @@ END:VCALENDAR`;
             window.URL.revokeObjectURL(link.href);
         }
 
-
-
-        
-
         // Inicializar la aplicación cuando el DOM esté cargado
         document.addEventListener("DOMContentLoaded", function () {
-            fetchFirebaseEvents();
+            fetchAirtableEvents();
             document.getElementById("searchInput").addEventListener("input", searchEvents);
         });
 
