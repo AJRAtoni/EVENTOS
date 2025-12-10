@@ -128,7 +128,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(108, 41, 240);
+  background-color: #ad1be9;
   font-size: 0.875rem;
   color: white;
   padding: 0;
@@ -145,7 +145,7 @@ h2 {
 }
 
 .calendar-btn {
-  background-color: rgb(108, 41, 240);
+  background-color: #ad1be9;
   color: white;
   border: none;
   padding: 0;
@@ -160,7 +160,7 @@ h2 {
 }
 
 .calendar-btn:hover {
-  background-color: rgb(88, 28, 200);
+  background-color: #8e16bf;
   transform: scale(1.05);
 }
 
@@ -188,7 +188,7 @@ footer {
 /* 🔹 Botón de suscripción sin cambios de tamaño */
 .suscribirse {
   display: inline-block;
-  background-color: rgb(108, 41, 240);
+  background-color: #ad1be9;
   color: white;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
@@ -218,7 +218,7 @@ footer {
 }
 
 .botonesfiltro {
-  background-color: rgb(108, 41, 240);
+  background-color: #ad1be9;
   border: none;
   font-size: 0.7rem;
   color: white;
@@ -229,7 +229,7 @@ footer {
 }
 
 .botonesfiltro.inactive {
-  background-color: rgb(169 128 249);
+  background-color: #b0b0b0;
   color: white;
 }
 
@@ -296,7 +296,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: rgb(108, 41, 240);
+  background-color: #ad1be9;
   color: white;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -324,20 +324,24 @@ footer {
   .row {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .card {
     margin: 0.3rem;
   }
+
   .faltan-container {
     gap: 1rem;
   }
+
   .faltan {
     font-size: 0.7rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .calendar-btn {
     min-width: 38px;
     width: 38px;
-    }
+  }
 }
