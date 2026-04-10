@@ -130,23 +130,29 @@
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
 
-                // Construir URL sin filtro para traer TODO (Marvel, DC, CulturaFreak, etc.)
-                // Ordenar por FechaOrden ascendente
-                const url = `https://api.airtable.com/v0/${CONFIG.AIRTABLE.BASE_ID}/${CONFIG.AIRTABLE.TABLE_NAME}?sort[0][field]=FechaOrden&sort[0][direction]=asc`;
+                // Airtable devuelve un máximo de 100 registros por petición.
+                // Recorremos todas las páginas usando `offset` para no dejar eventos fuera.
+                const baseUrl = `https://api.airtable.com/v0/${CONFIG.AIRTABLE.BASE_ID}/${CONFIG.AIRTABLE.TABLE_NAME}?sort[0][field]=FechaOrden&sort[0][direction]=asc&pageSize=100`;
+                let records = [];
+                let offset = '';
 
-                const response = await fetch(url, {
-                    headers: {
-                        'Authorization': `Bearer ${CONFIG.AIRTABLE.TOKEN}`
+                do {
+                    const response = await fetch(offset ? `${baseUrl}&offset=${encodeURIComponent(offset)}` : baseUrl, {
+                        headers: {
+                            'Authorization': `Bearer ${CONFIG.AIRTABLE.TOKEN}`
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error Airtable: ${response.status} ${response.statusText}`);
                     }
-                });
 
-                if (!response.ok) {
-                    throw new Error(`Error Airtable: ${response.status} ${response.statusText}`);
-                }
+                    const data = await response.json();
+                    records = records.concat(data.records || []);
+                    offset = data.offset || '';
+                } while (offset);
 
-                const data = await response.json();
-
-                allEvents = data.records.map(record => {
+                allEvents = records.map(record => {
                     const fields = record.fields;
                     const eventDateStr = fields.FechaOrden;
                     if (!eventDateStr) return null;
