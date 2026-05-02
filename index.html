@@ -73,7 +73,6 @@
         const placeholderimagen = 'images/logo.webp';
         const CACHE_KEY = 'ajra-eventos-cache-v1';
         const CACHE_TTL_MS = 10 * 60 * 1000;
-        const AIRTABLE_FIELDS = ['FechaOrden', 'Titulo', 'Descripcion', 'Imagen', CONFIG.AIRTABLE.CATEGORY_FIELD, 'IMDbURL', 'URL'];
         let allEvents = [];
         let activeCategory = 'todos';
 
@@ -234,7 +233,6 @@
             url.searchParams.set('sort[0][direction]', 'asc');
             url.searchParams.set('pageSize', '100');
             url.searchParams.set('filterByFormula', futureEventsFormula);
-            AIRTABLE_FIELDS.forEach(field => url.searchParams.append('fields[]', field));
             if (offset) url.searchParams.set('offset', offset);
 
             return url.toString();
