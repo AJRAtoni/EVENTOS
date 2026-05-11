@@ -17,7 +17,6 @@
         async></script>
     <link href="css/eventos.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 
 <body>
@@ -52,49 +51,56 @@
         &copy; Desarrollado con 🧠 & 💛 por &lt;/AJRA&gt;
     </footer>
 
-
     <script>
-        // Configuración de Airtable (Reutilizando credenciales de Marvel/DC)
         const CONFIG = {
-            AIRTABLE: {
-                TOKEN: 'patv41n63HLpkM4VN.' + 'bbe008721d08d1e969c3398df4550c53a1704b64ed752cc16ae8060a0bd373b3',
-                BASE_ID: 'apphXPfmF1OwvCPWC',
-                TABLE_NAME: 'eventos',
-                // Columna específica para los filtros de esta web (CINEYTV, DEPORTES, etc.)
-                CATEGORY_FIELD: 'CategoriaEvento',
-
-                // Mostrar todos los eventos (Marvel, DC, CulturaFreak)
-                // FILTER_FIELD: 'Franquicia',
-                // FILTER_VALUE: 'CulturaFreak'
-            }
+            DATA_URL: 'data/events.json',
+            SITE_ID: 'eventos'
         };
 
         const eventsContainer = document.getElementById('events');
         const placeholderimagen = 'images/logo.webp';
-        const CACHE_KEY = 'ajra-eventos-cache-v1';
-        const CACHE_TTL_MS = 10 * 60 * 1000;
         let allEvents = [];
         let activeCategory = 'todos';
 
-        // 📌 Formatea la fecha en formato DD/MM/YYYY
-        const formatDate = (date) => {
-            return new Intl.DateTimeFormat('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(date);
-        };
+        const formatDate = (date) => new Intl.DateTimeFormat('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(date);
 
-        // 📌 Calcula cuántos días faltan para el evento
         const calculateDaysRemaining = (eventDate) => {
             const today = new Date();
             today.setHours(0, 0, 0, 0);
             const eventDay = new Date(eventDate);
             eventDay.setHours(0, 0, 0, 0);
             const diffDays = Math.ceil((eventDay - today) / (1000 * 60 * 60 * 24));
-            return diffDays > 0 ? `FALTAN ${diffDays} DÍAS` : "HOY";
+            return diffDays > 0 ? `FALTAN ${diffDays} DÍAS` : 'HOY';
         };
 
-        // 📌 Muestra los eventos en la página
+        const parseEventDate = (dateString) => {
+            if (!dateString) return null;
+            const [year, month, day] = dateString.split('-').map(Number);
+            if (!year || !month || !day) return null;
+            return new Date(year, month - 1, day);
+        };
+
+        const normalizeEvent = (event) => {
+            const rawDate = event.date || event.FechaOrden;
+            const eventDate = parseEventDate(rawDate);
+
+            return {
+                id: event.id || `${event.title || event.titulo || 'sin-titulo'}-${rawDate || 'sin-fecha'}`,
+                titulo: event.title || event.titulo || 'Sin Título',
+                eventDate,
+                descripcion: event.description || event.descripcion || '',
+                imagen: event.image || event.imagen || placeholderimagen,
+                categoria: event.category || event.categoria || 'General',
+                url: event.url || event.IMDbURL || event.URL || '',
+                status: event.status || 'published',
+                sites: Array.isArray(event.sites) ? event.sites : ['eventos'],
+                brands: Array.isArray(event.brands) ? event.brands : [],
+                tags: Array.isArray(event.tags) ? event.tags : []
+            };
+        };
+
         const displayEvents = (events) => {
             eventsContainer.innerHTML = '';
-
             if (events.length === 0) {
                 eventsContainer.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1 / -1; margin-top:2rem;">No se encontraron eventos próximos.</p>';
                 return;
@@ -103,12 +109,8 @@
             events.forEach(({ titulo, eventDate, descripcion, imagen, url }) => {
                 const card = document.createElement('div');
                 card.className = 'card';
-
-                // Solo envolver la imagen en un enlace si existe una URL válida
                 const imageHtml = url && url.trim() !== ''
-                    ? `<a href="${url}" target="_blank">
-                        <img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy">
-                       </a>`
+                    ? `<a href="${url}" target="_blank"><img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy"></a>`
                     : `<img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy">`;
 
                 card.innerHTML = `
@@ -129,170 +131,44 @@
 
         const getVisibleEvents = () => {
             const searchString = document.getElementById('searchInput').value.toLowerCase().trim();
-
             return allEvents.filter(event => {
-                const matchesCategory = activeCategory === 'todos'
-                    || (event.categoria && event.categoria.toLowerCase() === activeCategory.toLowerCase());
+                const matchesCategory = activeCategory === 'todos' || (event.categoria && event.categoria.toLowerCase() === activeCategory.toLowerCase());
                 const matchesSearch = !searchString
                     || (event.titulo ? event.titulo.toLowerCase().includes(searchString) : false)
                     || (event.descripcion ? event.descripcion.toLowerCase().includes(searchString) : false);
-
                 return matchesCategory && matchesSearch;
             });
         };
 
-        const renderCurrentEvents = () => {
-            displayEvents(getVisibleEvents());
-        };
+        const renderCurrentEvents = () => displayEvents(getVisibleEvents());
 
-        const getToday = () => {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            return today;
-        };
-
-        const parseEventDate = (dateString) => {
-            const eventDate = new Date(dateString);
-            const userTimezoneOffset = eventDate.getTimezoneOffset() * 60000;
-            return new Date(eventDate.getTime() + userTimezoneOffset);
-        };
-
-        const mapAirtableRecordToEvent = (record) => {
-            const fields = record.fields;
-            const eventDateStr = fields.FechaOrden;
-            if (!eventDateStr) return null;
-
-            const eventDate = parseEventDate(eventDateStr);
-            if (isNaN(eventDate.getTime())) return null;
-
-            return {
-                id: record.id,
-                titulo: fields.Titulo || 'Sin Título',
-                eventDate,
-                descripcion: fields.Descripcion || '',
-                imagen: (fields.Imagen && fields.Imagen.length > 0) ? fields.Imagen[0].url : placeholderimagen,
-                // Usamos la nueva columna configurable 'CategoriaEvento'.
-                // Mantenemos fallback a 'General' si está vacía.
-                categoria: fields[CONFIG.AIRTABLE.CATEGORY_FIELD] || 'General',
-                url: fields.IMDbURL || fields.URL || ''
-            };
-        };
-
-        const normalizeEvents = (records) => {
-            const today = getToday();
-
-            return records
-                .map(mapAirtableRecordToEvent)
-                .filter(ev => ev !== null && ev.eventDate >= today);
-        };
-
-        const serializeEvents = (events) => {
-            return events.map(event => ({
-                ...event,
-                eventDate: event.eventDate.toISOString()
-            }));
-        };
-
-        const restoreEvents = (events) => {
-            return events.map(event => ({
-                ...event,
-                eventDate: new Date(event.eventDate)
-            }));
-        };
-
-        const readCachedEvents = () => {
+        const fetchJsonEvents = async () => {
             try {
-                const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
-                if (!cached || !cached.timestamp || !Array.isArray(cached.events)) return null;
-                if (Date.now() - cached.timestamp > CACHE_TTL_MS) return null;
-
-                return restoreEvents(cached.events)
-                    .filter(event => !isNaN(event.eventDate.getTime()) && event.eventDate >= getToday());
-            } catch (error) {
-                localStorage.removeItem(CACHE_KEY);
-                return null;
-            }
-        };
-
-        const cacheEvents = (events) => {
-            try {
-                localStorage.setItem(CACHE_KEY, JSON.stringify({
-                    timestamp: Date.now(),
-                    events: serializeEvents(events)
-                }));
-            } catch (error) {
-                // Si el navegador bloquea localStorage, la web sigue funcionando sin caché.
-            }
-        };
-
-        const buildAirtableUrl = (offset = '') => {
-            const url = new URL(`https://api.airtable.com/v0/${CONFIG.AIRTABLE.BASE_ID}/${encodeURIComponent(CONFIG.AIRTABLE.TABLE_NAME)}`);
-            const futureEventsFormula = "OR(IS_SAME({FechaOrden}, TODAY(), 'day'), IS_AFTER({FechaOrden}, TODAY()))";
-
-            url.searchParams.set('sort[0][field]', 'FechaOrden');
-            url.searchParams.set('sort[0][direction]', 'asc');
-            url.searchParams.set('pageSize', '100');
-            url.searchParams.set('filterByFormula', futureEventsFormula);
-            if (offset) url.searchParams.set('offset', offset);
-
-            return url.toString();
-        };
-
-        // 📌 Obtiene los eventos próximos desde Airtable
-        const fetchAirtableEvents = async () => {
-            const cachedEvents = readCachedEvents();
-            if (cachedEvents && cachedEvents.length > 0) {
-                allEvents = cachedEvents;
-                renderCurrentEvents();
-            } else {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
                 eventsContainer.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1 / -1; margin-top:2rem;">Cargando eventos...</p>';
-            }
 
-            try {
-                // Airtable devuelve un máximo de 100 registros por petición.
-                // Recorremos todas las páginas, pero ya filtradas a eventos próximos y campos necesarios.
-                let records = [];
-                let offset = '';
+                const response = await fetch(CONFIG.DATA_URL, { cache: 'no-store' });
+                if (!response.ok) throw new Error(`Error JSON: ${response.status} ${response.statusText}`);
 
-                do {
-                    const response = await fetch(buildAirtableUrl(offset), {
-                        headers: {
-                            'Authorization': `Bearer ${CONFIG.AIRTABLE.TOKEN}`
-                        }
-                    });
+                const data = await response.json();
+                const records = Array.isArray(data.events) ? data.events : [];
+                allEvents = records
+                    .map(normalizeEvent)
+                    .filter(event => event && event.status === 'published' && Array.isArray(event.sites) && event.sites.includes(CONFIG.SITE_ID)
+                        && event.eventDate instanceof Date && !isNaN(event.eventDate.getTime()) && event.eventDate >= today)
+                    .sort((a, b) => a.eventDate - b.eventDate);
 
-                    if (!response.ok) {
-                        throw new Error(`Error Airtable: ${response.status} ${response.statusText}`);
-                    }
-
-                    const data = await response.json();
-                    records = records.concat(data.records || []);
-                    offset = data.offset || '';
-
-                    if (records.length > 0) {
-                        allEvents = normalizeEvents(records);
-                        renderCurrentEvents();
-                    }
-                } while (offset);
-
-                allEvents = normalizeEvents(records);
-                cacheEvents(allEvents);
-                renderCurrentEvents();
-
+                displayEvents(allEvents);
             } catch (error) {
-                console.error('Error al cargar eventos desde Airtable:', error);
-                if (!cachedEvents || cachedEvents.length === 0) {
-                    eventsContainer.innerHTML = `<p style="text-align:center; color: red; width:100%; grid-column: 1 / -1;">Error cargando eventos: ${error.message}</p>`;
-                }
+                console.error('Error al cargar eventos desde JSON:', error);
+                eventsContainer.innerHTML = `<p style="text-align:center; color: red; width:100%; grid-column: 1 / -1;">Error cargando eventos: ${error.message}</p>`;
             }
         };
 
-        // 📌 Filtra eventos por categoría
         function filterEvents(categoria) {
             activeCategory = categoria;
-
             const buttons = document.querySelectorAll('.botonesfiltro');
-
             if (categoria === 'todos') {
                 buttons.forEach(button => {
                     button.classList.remove('inactive');
@@ -303,54 +179,27 @@
                     button.classList.remove('active');
                     button.classList.add('inactive');
                 });
-                const activeButton = [...buttons].find(button => button.getAttribute("onclick") === `filterEvents('${categoria}')`);
+                const activeButton = [...buttons].find(button => button.getAttribute('onclick') === `filterEvents('${categoria}')`);
                 if (activeButton) {
                     activeButton.classList.add('active');
                     activeButton.classList.remove('inactive');
                 }
             }
-
             renderCurrentEvents();
-        };
+        }
 
-        // 📌 Busca eventos por título o descripción
         function searchEvents() {
             renderCurrentEvents();
         }
 
-        // 📌 Genera y descarga archivo ICS para calendario
         function downloadICS(titulo, fechaISO, descripcion) {
             const eventDate = new Date(fechaISO);
-
-            const formatDateForICS = (date) => {
-                const year = date.getFullYear();
-                const month = String(date.getMonth() + 1).padStart(2, '0');
-                const day = String(date.getDate()).padStart(2, '0');
-                return `${year}${month}${day}`;
-            };
-
+            const formatDateForICS = (date) => `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`;
             const now = new Date();
             const timestamp = now.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            const cleanText = (text) => text.replace(/[^\w\s]/gi, '').replace(/\n/g, '\\n').replace(/,/g, '\\,');
 
-            const cleanText = (text) => {
-                return text.replace(/[^\w\s]/gi, '').replace(/\n/g, '\\n').replace(/,/g, '\\,');
-            };
-
-            const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//CULTURAFREAK//EVENTOS//ES
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-BEGIN:VEVENT
-UID:${timestamp}-culturafreak@ajra.es
-DTSTART;VALUE=DATE:${formatDateForICS(eventDate)}
-SUMMARY:${cleanText(titulo)}
-DESCRIPTION:${cleanText(descripcion || 'Evento de CULTURAFREAK')}
-ORGANIZER;CN=CULTURAFREAK:MAILTO:eventos@ajra.es
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-END:VCALENDAR`;
+            const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//CULTURAFREAK//EVENTOS//ES\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:${timestamp}-culturafreak@ajra.es\nDTSTART;VALUE=DATE:${formatDateForICS(eventDate)}\nSUMMARY:${cleanText(titulo)}\nDESCRIPTION:${cleanText(descripcion || 'Evento de CULTURAFREAK')}\nORGANIZER;CN=CULTURAFREAK:MAILTO:eventos@ajra.es\nSTATUS:CONFIRMED\nTRANSP:TRANSPARENT\nEND:VEVENT\nEND:VCALENDAR`;
 
             const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
             const link = document.createElement('a');
@@ -362,12 +211,10 @@ END:VCALENDAR`;
             window.URL.revokeObjectURL(link.href);
         }
 
-        // Inicializar la aplicación cuando el DOM esté cargado
-        document.addEventListener("DOMContentLoaded", function () {
-            fetchAirtableEvents();
-            document.getElementById("searchInput").addEventListener("input", searchEvents);
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchJsonEvents();
+            document.getElementById('searchInput').addEventListener('input', searchEvents);
         });
-
     </script>
 </body>
 

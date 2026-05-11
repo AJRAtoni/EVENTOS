@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-11T00:00:00-04:00",
+  "source": "manual",
+  "events": [
+    {
+      "id": "evt-placeholder-001",
+      "title": "Festival de Cine de Verano",
+      "description": "Proyección especial al aire libre con clásicos del cine.",
+      "date": "2026-06-20",
+      "category": "cineytv",
+      "image": "images/eventos/eventos.webp",
+      "url": "https://example.com/festival-cine-verano",
+      "status": "published",
+      "sites": ["eventos"],
+      "brands": ["general"],
+      "tags": ["cine", "verano"]
+    },
+    {
+      "id": "evt-placeholder-002",
+      "title": "Torneo Solidario Gaming",
+      "description": "Competición benéfica con stream en directo.",
+      "date": "2026-08-12",
+      "category": "videojuegos",
+      "image": "images/eventos/eventos.webp",
+      "url": "",
+      "status": "published",
+      "sites": ["eventos", "marvel"],
+      "brands": ["marvel"],
+      "tags": ["gaming", "solidario"]
+    },
+    {
+      "id": "evt-placeholder-003",
+      "title": "Conferencia Tech AJRA",
+      "description": "Novedades de tecnología y cultura digital para 2026.",
+      "date": "2026-10-05",
+      "category": "tecnologia",
+      "image": "images/eventos/eventos.webp",
+      "url": "https://example.com/conferencia-tech-ajra",
+      "status": "draft",
+      "sites": ["eventos"],
+      "brands": ["general"],
+      "tags": ["tech", "charla"]
+    }
+  ]
+}
