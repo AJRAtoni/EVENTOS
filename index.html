@@ -70,8 +70,11 @@
         };
 
         const eventsContainer = document.getElementById('events');
-        const placeholderimagen = 'images/eventos/eventos.webp';
+        const placeholderimagen = 'images/logo.webp';
+        const CACHE_KEY = 'ajra-eventos-cache-v1';
+        const CACHE_TTL_MS = 10 * 60 * 1000;
         let allEvents = [];
+        let activeCategory = 'todos';
 
         // 📌 Formatea la fecha en formato DD/MM/YYYY
         const formatDate = (date) => {
@@ -124,20 +127,135 @@
             });
         };
 
-        // 📌 Obtiene los eventos desde Airtable
-        const fetchAirtableEvents = async () => {
-            try {
-                const today = new Date();
-                today.setHours(0, 0, 0, 0);
+        const getVisibleEvents = () => {
+            const searchString = document.getElementById('searchInput').value.toLowerCase().trim();
 
+            return allEvents.filter(event => {
+                const matchesCategory = activeCategory === 'todos'
+                    || (event.categoria && event.categoria.toLowerCase() === activeCategory.toLowerCase());
+                const matchesSearch = !searchString
+                    || (event.titulo ? event.titulo.toLowerCase().includes(searchString) : false)
+                    || (event.descripcion ? event.descripcion.toLowerCase().includes(searchString) : false);
+
+                return matchesCategory && matchesSearch;
+            });
+        };
+
+        const renderCurrentEvents = () => {
+            displayEvents(getVisibleEvents());
+        };
+
+        const getToday = () => {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            return today;
+        };
+
+        const parseEventDate = (dateString) => {
+            const eventDate = new Date(dateString);
+            const userTimezoneOffset = eventDate.getTimezoneOffset() * 60000;
+            return new Date(eventDate.getTime() + userTimezoneOffset);
+        };
+
+        const mapAirtableRecordToEvent = (record) => {
+            const fields = record.fields;
+            const eventDateStr = fields.FechaOrden;
+            if (!eventDateStr) return null;
+
+            const eventDate = parseEventDate(eventDateStr);
+            if (isNaN(eventDate.getTime())) return null;
+
+            return {
+                id: record.id,
+                titulo: fields.Titulo || 'Sin Título',
+                eventDate,
+                descripcion: fields.Descripcion || '',
+                imagen: (fields.Imagen && fields.Imagen.length > 0) ? fields.Imagen[0].url : placeholderimagen,
+                // Usamos la nueva columna configurable 'CategoriaEvento'.
+                // Mantenemos fallback a 'General' si está vacía.
+                categoria: fields[CONFIG.AIRTABLE.CATEGORY_FIELD] || 'General',
+                url: fields.IMDbURL || fields.URL || ''
+            };
+        };
+
+        const normalizeEvents = (records) => {
+            const today = getToday();
+
+            return records
+                .map(mapAirtableRecordToEvent)
+                .filter(ev => ev !== null && ev.eventDate >= today);
+        };
+
+        const serializeEvents = (events) => {
+            return events.map(event => ({
+                ...event,
+                eventDate: event.eventDate.toISOString()
+            }));
+        };
+
+        const restoreEvents = (events) => {
+            return events.map(event => ({
+                ...event,
+                eventDate: new Date(event.eventDate)
+            }));
+        };
+
+        const readCachedEvents = () => {
+            try {
+                const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+                if (!cached || !cached.timestamp || !Array.isArray(cached.events)) return null;
+                if (Date.now() - cached.timestamp > CACHE_TTL_MS) return null;
+
+                return restoreEvents(cached.events)
+                    .filter(event => !isNaN(event.eventDate.getTime()) && event.eventDate >= getToday());
+            } catch (error) {
+                localStorage.removeItem(CACHE_KEY);
+                return null;
+            }
+        };
+
+        const cacheEvents = (events) => {
+            try {
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    timestamp: Date.now(),
+                    events: serializeEvents(events)
+                }));
+            } catch (error) {
+                // Si el navegador bloquea localStorage, la web sigue funcionando sin caché.
+            }
+        };
+
+        const buildAirtableUrl = (offset = '') => {
+            const url = new URL(`https://api.airtable.com/v0/${CONFIG.AIRTABLE.BASE_ID}/${encodeURIComponent(CONFIG.AIRTABLE.TABLE_NAME)}`);
+            const futureEventsFormula = "OR(IS_SAME({FechaOrden}, TODAY(), 'day'), IS_AFTER({FechaOrden}, TODAY()))";
+
+            url.searchParams.set('sort[0][field]', 'FechaOrden');
+            url.searchParams.set('sort[0][direction]', 'asc');
+            url.searchParams.set('pageSize', '100');
+            url.searchParams.set('filterByFormula', futureEventsFormula);
+            if (offset) url.searchParams.set('offset', offset);
+
+            return url.toString();
+        };
+
+        // 📌 Obtiene los eventos próximos desde Airtable
+        const fetchAirtableEvents = async () => {
+            const cachedEvents = readCachedEvents();
+            if (cachedEvents && cachedEvents.length > 0) {
+                allEvents = cachedEvents;
+                renderCurrentEvents();
+            } else {
+                eventsContainer.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1 / -1; margin-top:2rem;">Cargando eventos...</p>';
+            }
+
+            try {
                 // Airtable devuelve un máximo de 100 registros por petición.
-                // Recorremos todas las páginas usando `offset` para no dejar eventos fuera.
-                const baseUrl = `https://api.airtable.com/v0/${CONFIG.AIRTABLE.BASE_ID}/${CONFIG.AIRTABLE.TABLE_NAME}?sort[0][field]=FechaOrden&sort[0][direction]=asc&pageSize=100`;
+                // Recorremos todas las páginas, pero ya filtradas a eventos próximos y campos necesarios.
                 let records = [];
                 let offset = '';
 
                 do {
-                    const response = await fetch(offset ? `${baseUrl}&offset=${encodeURIComponent(offset)}` : baseUrl, {
+                    const response = await fetch(buildAirtableUrl(offset), {
                         headers: {
                             'Authorization': `Bearer ${CONFIG.AIRTABLE.TOKEN}`
                         }
@@ -150,42 +268,28 @@
                     const data = await response.json();
                     records = records.concat(data.records || []);
                     offset = data.offset || '';
+
+                    if (records.length > 0) {
+                        allEvents = normalizeEvents(records);
+                        renderCurrentEvents();
+                    }
                 } while (offset);
 
-                allEvents = records.map(record => {
-                    const fields = record.fields;
-                    const eventDateStr = fields.FechaOrden;
-                    if (!eventDateStr) return null;
-
-                    const eventDate = new Date(eventDateStr);
-                    const userTimezoneOffset = eventDate.getTimezoneOffset() * 60000;
-                    const adjustedDate = new Date(eventDate.getTime() + userTimezoneOffset);
-
-                    return {
-                        id: record.id,
-                        titulo: fields.Titulo || 'Sin Título',
-                        eventDate: adjustedDate,
-                        descripcion: fields.Descripcion || '',
-                        imagen: (fields.Imagen && fields.Imagen.length > 0) ? fields.Imagen[0].url : placeholderimagen,
-                        // Usamos la nueva columna configurable 'CategoriaEvento'. 
-                        // Mantenemos fallback a 'General' si está vacía.
-                        categoria: fields[CONFIG.AIRTABLE.CATEGORY_FIELD] || 'General',
-                        url: fields.IMDbURL || fields.URL || ''
-                    };
-                })
-                    .filter(ev => ev !== null && !isNaN(ev.eventDate.getTime()) && ev.eventDate >= today);
-
-                displayEvents(allEvents);
+                allEvents = normalizeEvents(records);
+                cacheEvents(allEvents);
+                renderCurrentEvents();
 
             } catch (error) {
                 console.error('Error al cargar eventos desde Airtable:', error);
-                eventsContainer.innerHTML = `<p style="text-align:center; color: red; width:100%; grid-column: 1 / -1;">Error cargando eventos: ${error.message}</p>`;
+                if (!cachedEvents || cachedEvents.length === 0) {
+                    eventsContainer.innerHTML = `<p style="text-align:center; color: red; width:100%; grid-column: 1 / -1;">Error cargando eventos: ${error.message}</p>`;
+                }
             }
         };
 
         // 📌 Filtra eventos por categoría
         function filterEvents(categoria) {
-            if (!allEvents.length) return;
+            activeCategory = categoria;
 
             const buttons = document.querySelectorAll('.botonesfiltro');
 
@@ -206,23 +310,12 @@
                 }
             }
 
-            const filteredEvents = categoria === 'todos'
-                ? allEvents
-                : allEvents.filter(event => event.categoria && event.categoria.toLowerCase() === categoria.toLowerCase());
-
-            displayEvents(filteredEvents);
+            renderCurrentEvents();
         };
 
         // 📌 Busca eventos por título o descripción
         function searchEvents() {
-            const searchString = document.getElementById('searchInput').value.toLowerCase();
-
-            const filteredEvents = allEvents.filter(event =>
-                (event.titulo ? event.titulo.toLowerCase().includes(searchString) : false) ||
-                (event.descripcion ? event.descripcion.toLowerCase().includes(searchString) : false)
-            );
-
-            displayEvents(filteredEvents);
+            renderCurrentEvents();
         }
 
         // 📌 Genera y descarga archivo ICS para calendario
