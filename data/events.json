@@ -1,46 +1,2380 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-11T00:00:00-04:00",
-  "source": "manual",
+  "updatedAt": "2026-05-11T14:43:07.547Z",
+  "source": "airtable-export-cloudinary-images",
   "events": [
     {
-      "id": "evt-placeholder-001",
-      "title": "Festival de Cine de Verano",
-      "description": "Proyección especial al aire libre con clásicos del cine.",
-      "date": "2026-06-20",
-      "category": "cineytv",
-      "image": "images/eventos/eventos.webp",
-      "url": "https://example.com/festival-cine-verano",
-      "status": "published",
-      "sites": ["eventos"],
-      "brands": ["general"],
-      "tags": ["cine", "verano"]
-    },
-    {
-      "id": "evt-placeholder-002",
-      "title": "Torneo Solidario Gaming",
-      "description": "Competición benéfica con stream en directo.",
-      "date": "2026-08-12",
+      "id": "evt-2025-12-10-the-game-awards-2025",
+      "title": "The Game Awards 2025",
+      "description": "",
+      "date": "2025-12-10",
       "category": "videojuegos",
-      "image": "images/eventos/eventos.webp",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510430/eventos/evt-2025-12-10-the-game-awards-2025.jpg",
       "url": "",
       "status": "published",
-      "sites": ["eventos", "marvel"],
-      "brands": ["marvel"],
-      "tags": ["gaming", "solidario"]
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos"
+      ]
     },
     {
-      "id": "evt-placeholder-003",
-      "title": "Conferencia Tech AJRA",
-      "description": "Novedades de tecnología y cultura digital para 2026.",
-      "date": "2026-10-05",
+      "id": "evt-2025-12-12-wake-up-dead-man",
+      "title": "Wake Up Dead Man",
+      "description": "",
+      "date": "2025-12-12",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510432/eventos/evt-2025-12-12-wake-up-dead-man.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2025-12-17-fallout-temporada-2",
+      "title": "Fallout - Temporada 2",
+      "description": "",
+      "date": "2025-12-17",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510433/eventos/evt-2025-12-17-fallout-temporada-2.jpg",
+      "url": "https://youtu.be/7TsP09cZA7o?si=dHvIgS6zwaTmCA7O",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2025-12-19-avatar-fuego-y-ceniza",
+      "title": "Avatar: Fuego y ceniza",
+      "description": "",
+      "date": "2025-12-19",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510435/eventos/evt-2025-12-19-avatar-fuego-y-ceniza.jpg",
+      "url": "https://youtu.be/Ma1x7ikpid8?si=YsmhDlg49Or4JRtd",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2025-12-25-stranger-things",
+      "title": "Stranger Things",
+      "description": "",
+      "date": "2025-12-25",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510436/eventos/evt-2025-12-25-stranger-things.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2025-12-31-lego-batman-insurgency",
+      "title": "Lego Batman: Insurgency",
+      "description": "",
+      "date": "2025-12-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510438/eventos/evt-2025-12-31-lego-batman-insurgency.jxl",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2025-12-31-stranger-things",
+      "title": "Stranger Things",
+      "description": "",
+      "date": "2025-12-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510437/eventos/evt-2025-12-31-stranger-things.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-01-baba-yaga",
+      "title": "Baba Yaga",
+      "description": "",
+      "date": "2026-01-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510439/eventos/evt-2026-01-01-baba-yaga.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-06-ces-2026",
+      "title": "CES 2026",
+      "description": "",
+      "date": "2026-01-06",
       "category": "tecnologia",
-      "image": "images/eventos/eventos.webp",
-      "url": "https://example.com/conferencia-tech-ajra",
-      "status": "draft",
-      "sites": ["eventos"],
-      "brands": ["general"],
-      "tags": ["tech", "charla"]
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510440/eventos/evt-2026-01-06-ces-2026.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "evt-2026-01-11-golden-globes",
+      "title": "Golden Globes",
+      "description": "",
+      "date": "2026-01-11",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510442/eventos/evt-2026-01-11-golden-globes.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-15-red-bull-presentacion-rb22",
+      "title": "Red Bull: Presentación RB22",
+      "description": "",
+      "date": "2026-01-15",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510443/eventos/evt-2026-01-15-red-bull-presentacion-rb22.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-01-16-28-years-later-the-bone-temple",
+      "title": "28 Years Later: The Bone Temple",
+      "description": "",
+      "date": "2026-01-16",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510444/eventos/evt-2026-01-16-28-years-later-the-bone-temple.jpg",
+      "url": "https://youtu.be/EOwTdTZA8D8?si=YfVOrE2SEDATDIhK",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-20-audi-revolut-f1-team-presentacion",
+      "title": "Audi Revolut F1 Team: Presentación",
+      "description": "",
+      "date": "2026-01-20",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510447/eventos/evt-2026-01-20-audi-revolut-f1-team-presentacion.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-01-22-mercedes-presentacion-del-mercedes-f1-w7",
+      "title": "Mercedes: Presentación del Mercedes F1 W7",
+      "description": "",
+      "date": "2026-01-22",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510448/eventos/evt-2026-01-22-mercedes-presentacion-del-mercedes-f1-w7.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-01-23-alpine-presentacion-del-a526",
+      "title": "Alpine: Presentación del A526",
+      "description": "",
+      "date": "2026-01-23",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510454/eventos/evt-2026-01-23-alpine-presentacion-del-a526.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-01-23-ferrari-presentacion-de-sf-26",
+      "title": "Ferrari: Presentación de SF-26",
+      "description": "",
+      "date": "2026-01-23",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510451/eventos/evt-2026-01-23-ferrari-presentacion-de-sf-26.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-01-23-haas-presentacion-del-vf-26",
+      "title": "HAAS: Presentación del VF-26",
+      "description": "",
+      "date": "2026-01-23",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510453/eventos/evt-2026-01-23-haas-presentacion-del-vf-26.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-01-23-mercy",
+      "title": "Mercy",
+      "description": "",
+      "date": "2026-01-23",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510450/eventos/evt-2026-01-23-mercy.jpg",
+      "url": "https://youtu.be/dSS4yqd0x6o?si=IWa43WaeQ3Mu-nKY",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-23-return-to-silent-hill",
+      "title": "Return to Silent Hill",
+      "description": "",
+      "date": "2026-01-23",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510449/eventos/evt-2026-01-23-return-to-silent-hill.webp",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-26-f1-2026-primer-test-barcelona",
+      "title": "F1 2026: Primer Test (Barcelona)",
+      "description": "",
+      "date": "2026-01-26",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510456/eventos/evt-2026-01-26-f1-2026-primer-test-barcelona.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-01-27-wonder-man",
+      "title": "Wonder Man",
+      "description": "",
+      "date": "2026-01-27",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510457/eventos/evt-2026-01-27-wonder-man.jpg",
+      "url": "https://www.imdb.com/title/tt21066182/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "serie",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-30-aida-y-vuelta",
+      "title": "Aida y vuelta",
+      "description": "",
+      "date": "2026-01-30",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510459/eventos/evt-2026-01-30-aida-y-vuelta.jpg",
+      "url": "https://youtu.be/O82ibLC4bmM?si=37YkQ7vBbwyJQL5e",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-01-30-good-luck-have-fun-don-t-die",
+      "title": "Good Luck, Have Fun, Don't Die",
+      "description": "",
+      "date": "2026-01-30",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510458/eventos/evt-2026-01-30-good-luck-have-fun-don-t-die.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-02-02-dia-de-la-marmota",
+      "title": "Día de la Marmota",
+      "description": "",
+      "date": "2026-02-02",
+      "category": "festividades",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510460/eventos/evt-2026-02-02-dia-de-la-marmota.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "festividades"
+      ]
+    },
+    {
+      "id": "evt-2026-02-03-williams-presentacion-fw48",
+      "title": "Williams: Presentación FW48",
+      "description": "",
+      "date": "2026-02-03",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510461/eventos/evt-2026-02-03-williams-presentacion-fw48.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-02-06-dracula",
+      "title": "Drácula",
+      "description": "",
+      "date": "2026-02-06",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510463/eventos/evt-2026-02-06-dracula.jpg",
+      "url": "https://youtu.be/XyrfKP6R1J4?si=P6QL3sePjHJ9WRfn",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-02-08-cadillac-f1-presentacion-del-nuevo-equipo-de-f1",
+      "title": "Cadillac F1: Presentación del nuevo equipo de F1",
+      "description": "",
+      "date": "2026-02-08",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510464/eventos/evt-2026-02-08-cadillac-f1-presentacion-del-nuevo-equipo-de-f1.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-02-09-aston-martin-presentacion-del-amr26",
+      "title": "Aston Martin: Presentación del AMR26",
+      "description": "",
+      "date": "2026-02-09",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510465/eventos/evt-2026-02-09-aston-martin-presentacion-del-amr26.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-02-11-f1-2026-segundo-test-bahrein",
+      "title": "F1 2026: Segundo Test (Bahrein)",
+      "description": "",
+      "date": "2026-02-11",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510466/eventos/evt-2026-02-11-f1-2026-segundo-test-bahrein.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-02-14-san-valentin",
+      "title": "San Valentín",
+      "description": "",
+      "date": "2026-02-14",
+      "category": "festividades",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510467/eventos/evt-2026-02-14-san-valentin.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "festividades"
+      ]
+    },
+    {
+      "id": "evt-2026-02-18-f1-2026-tercer-test-bahrein",
+      "title": "F1 2026: Tercer Test (Bahrein)",
+      "description": "",
+      "date": "2026-02-18",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510468/eventos/evt-2026-02-18-f1-2026-tercer-test-bahrein.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-02-25-samsung-galaxy-unpacked-2026",
+      "title": "Samsung Galaxy Unpacked 2026",
+      "description": "",
+      "date": "2026-02-25",
+      "category": "tecnologia",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510470/eventos/evt-2026-02-25-samsung-galaxy-unpacked-2026.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "evt-2026-02-27-monarch-legacy-of-monsters-temporada-2",
+      "title": "Monarch: Legacy of Monsters - Temporada 2",
+      "description": "",
+      "date": "2026-02-27",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510471/eventos/evt-2026-02-27-monarch-legacy-of-monsters-temporada-2.webp",
+      "url": "https://www.imdb.com/title/tt17220216/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "serie",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-02-27-scream-7",
+      "title": "Scream 7",
+      "description": "",
+      "date": "2026-02-27",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510471/eventos/evt-2026-02-27-scream-7.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-04-apple-event",
+      "title": "Apple Event",
+      "description": "",
+      "date": "2026-03-04",
+      "category": "tecnologia",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510473/eventos/evt-2026-03-04-apple-event.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "evt-2026-03-04-the-super-mario-galaxy-movie",
+      "title": "The Super Mario Galaxy Movie",
+      "description": "",
+      "date": "2026-03-04",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510472/eventos/evt-2026-03-04-the-super-mario-galaxy-movie.jpg",
+      "url": "https://youtu.be/73ChoYKVMcw?si=NBSqUjy0X_U_3fJN",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-06-the-bride",
+      "title": "The Bride!",
+      "description": "",
+      "date": "2026-03-06",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510474/eventos/evt-2026-03-06-the-bride.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-08-gran-premio-de-australia-2026",
+      "title": "Gran Premio de Australia 2026",
+      "description": "",
+      "date": "2026-03-08",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510476/eventos/evt-2026-03-08-gran-premio-de-australia-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-03-09-la-velada-del-ano-presentacion",
+      "title": "La Velada del Año - Presentación",
+      "description": "",
+      "date": "2026-03-09",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510477/eventos/evt-2026-03-09-la-velada-del-ano-presentacion.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-03-15-98th-annual-academy-awards",
+      "title": "🏆 98th Annual Academy Awards",
+      "description": "",
+      "date": "2026-03-15",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510479/eventos/evt-2026-03-15-98th-annual-academy-awards.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-15-gran-premio-de-china-2026",
+      "title": "Gran Premio de China 2026",
+      "description": "",
+      "date": "2026-03-15",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510478/eventos/evt-2026-03-15-gran-premio-de-china-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-03-18-invincible-s4-episodios-1-3-premiere",
+      "title": "Invincible S4 - Episodios 1-3 (Premiere)",
+      "description": "",
+      "date": "2026-03-18",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510481/eventos/evt-2026-03-18-invincible-s4-episodios-1-3-premiere.jpg",
+      "url": "https://www.imdb.com/title/tt6741278/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "serie",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-24-daredevil-born-again-temporada-2",
+      "title": "Daredevil: Born Again - Temporada 2",
+      "description": "",
+      "date": "2026-03-24",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510482/eventos/evt-2026-03-24-daredevil-born-again-temporada-2.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "serie",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-25-invincible-s4-episodio-4",
+      "title": "Invincible S4 - Episodio 4",
+      "description": "",
+      "date": "2026-03-25",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510483/eventos/evt-2026-03-25-invincible-s4-episodio-4.jpg",
+      "url": "https://www.imdb.com/title/tt6741278/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "serie",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-27-for-all-mankind-season-5",
+      "title": "For All Mankind: Season 5",
+      "description": "",
+      "date": "2026-03-27",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510484/eventos/evt-2026-03-27-for-all-mankind-season-5.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-29-gran-premio-de-japon-2026",
+      "title": "Gran Premio de Japón 2026",
+      "description": "",
+      "date": "2026-03-29",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510487/eventos/evt-2026-03-29-gran-premio-de-japon-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-03-31-daredevil-born-again-episodio-2",
+      "title": "Daredevil: Born Again: Episodio 2",
+      "description": "",
+      "date": "2026-03-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510488/eventos/evt-2026-03-31-daredevil-born-again-episodio-2.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-03-31-daredevil-born-again-episodio-3",
+      "title": "Daredevil: Born Again: Episodio 3",
+      "description": "",
+      "date": "2026-03-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510490/eventos/evt-2026-03-31-daredevil-born-again-episodio-3.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-01-invincible-s4-episodio-5",
+      "title": "Invincible S4 - Episodio 5",
+      "description": "",
+      "date": "2026-04-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510491/eventos/evt-2026-04-01-invincible-s4-episodio-5.jpg",
+      "url": "https://www.imdb.com/title/tt6741278/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "serie",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-07-daredevil-born-again-episodio-4",
+      "title": "Daredevil: Born Again: Episodio 4",
+      "description": "",
+      "date": "2026-04-07",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510492/eventos/evt-2026-04-07-daredevil-born-again-episodio-4.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-08-invincible-s4-episodio-6",
+      "title": "Invincible S4 - Episodio 6",
+      "description": "",
+      "date": "2026-04-08",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510493/eventos/evt-2026-04-08-invincible-s4-episodio-6.jpg",
+      "url": "https://www.imdb.com/title/tt6741278/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "serie",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-12-gran-premio-de-bahrein-2026",
+      "title": "Gran Premio de Bahréin 2026",
+      "description": "",
+      "date": "2026-04-12",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510494/eventos/evt-2026-04-12-gran-premio-de-bahrein-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-04-14-daredevil-born-again-episodio-5",
+      "title": "Daredevil: Born Again: Episodio 5",
+      "description": "",
+      "date": "2026-04-14",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510495/eventos/evt-2026-04-14-daredevil-born-again-episodio-5.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-15-invincible-s4-episodio-7",
+      "title": "Invincible S4 - Episodio 7",
+      "description": "",
+      "date": "2026-04-15",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510496/eventos/evt-2026-04-15-invincible-s4-episodio-7.jpg",
+      "url": "https://www.imdb.com/title/tt6741278/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "serie",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-19-gran-premio-de-arabia-saudi-2026",
+      "title": "Gran Premio de Arabia Saudí 2026",
+      "description": "",
+      "date": "2026-04-19",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510498/eventos/evt-2026-04-19-gran-premio-de-arabia-saudi-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-04-21-daredevil-born-again-episodio-6",
+      "title": "Daredevil: Born Again: Episodio 6",
+      "description": "",
+      "date": "2026-04-21",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510499/eventos/evt-2026-04-21-daredevil-born-again-episodio-6.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-22-dia-mundial-del-libro",
+      "title": "📚 Día Mundial del Libro",
+      "description": "",
+      "date": "2026-04-22",
+      "category": "festividades",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510500/eventos/evt-2026-04-22-dia-mundial-del-libro.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "festividades"
+      ]
+    },
+    {
+      "id": "evt-2026-04-22-invincible-s4-episodio-8-finale",
+      "title": "Invincible S4 - Episodio 8 (Finale)",
+      "description": "",
+      "date": "2026-04-22",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510501/eventos/evt-2026-04-22-invincible-s4-episodio-8-finale.jpg",
+      "url": "https://www.imdb.com/title/tt6741278/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "serie",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-24-michael",
+      "title": "Michael",
+      "description": "",
+      "date": "2026-04-24",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510502/eventos/evt-2026-04-24-michael.jpg",
+      "url": "https://youtu.be/RrktXOjOtps?si=psL-pYNLDkH9RnAY",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-28-daredevil-born-again-episodio-7",
+      "title": "Daredevil: Born Again: Episodio 7",
+      "description": "",
+      "date": "2026-04-28",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510503/eventos/evt-2026-04-28-daredevil-born-again-episodio-7.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-05-03-gran-premio-de-miami-2026",
+      "title": "Gran Premio de Miami 2026",
+      "description": "",
+      "date": "2026-05-03",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510504/eventos/evt-2026-05-03-gran-premio-de-miami-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-05-05-daredevil-born-again-episodio-8",
+      "title": "Daredevil: Born Again: Episodio 8",
+      "description": "",
+      "date": "2026-05-05",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510505/eventos/evt-2026-05-05-daredevil-born-again-episodio-8.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-05-12-the-punisher-one-last-kill",
+      "title": "The Punisher: One Last Kill",
+      "description": "",
+      "date": "2026-05-12",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510506/eventos/evt-2026-05-12-the-punisher-one-last-kill.jpg",
+      "url": "https://www.imdb.com/title/tt36042156/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "serie",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-05-14-openai",
+      "title": "OpenAI",
+      "description": "",
+      "date": "2026-05-14",
+      "category": "tecnologia",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510507/eventos/evt-2026-05-14-openai.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "evt-2026-05-20-the-mandalorian-y-grogu",
+      "title": "The Mandalorian & Grogu",
+      "description": "",
+      "date": "2026-05-20",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510508/eventos/evt-2026-05-20-the-mandalorian-y-grogu.jpg",
+      "url": "https://youtu.be/_pa1KLXuW0Y",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-05-24-gran-premio-de-canada-2026",
+      "title": "Gran Premio de Canadá 2026",
+      "description": "",
+      "date": "2026-05-24",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510509/eventos/evt-2026-05-24-gran-premio-de-canada-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-05-27-spider-noir",
+      "title": "Spider-Noir",
+      "description": "",
+      "date": "2026-05-27",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510510/eventos/evt-2026-05-27-spider-noir.jpg",
+      "url": "https://www.imdb.com/title/tt30460310/?ref_=ext_shr_lnk",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "serie",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-05-masters-of-the-universe",
+      "title": "Masters of the Universe",
+      "description": "",
+      "date": "2026-06-05",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510511/eventos/evt-2026-06-05-masters-of-the-universe.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-05-summer-game-fest-2026",
+      "title": "Summer Game Fest 2026",
+      "description": "",
+      "date": "2026-06-05",
+      "category": "videojuegos",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510513/eventos/evt-2026-06-05-summer-game-fest-2026.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos"
+      ]
+    },
+    {
+      "id": "evt-2026-06-07-gran-premio-de-monaco-2026",
+      "title": "Gran Premio de Mónaco 2026",
+      "description": "",
+      "date": "2026-06-07",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510514/eventos/evt-2026-06-07-gran-premio-de-monaco-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-06-08-wwdc-26",
+      "title": "WWDC 26",
+      "description": "",
+      "date": "2026-06-08",
+      "category": "tecnologia",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510515/eventos/evt-2026-06-08-wwdc-26.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "evt-2026-06-12-scary-movie-6",
+      "title": "Scary Movie 6",
+      "description": "",
+      "date": "2026-06-12",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510516/eventos/evt-2026-06-12-scary-movie-6.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-14-gran-premio-de-espana-barcelona-2026",
+      "title": "Gran Premio de España (Barcelona) 2026",
+      "description": "",
+      "date": "2026-06-14",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510518/eventos/evt-2026-06-14-gran-premio-de-espana-barcelona-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-06-19-toy-story-5",
+      "title": "Toy Story 5",
+      "description": "",
+      "date": "2026-06-19",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510518/eventos/evt-2026-06-19-toy-story-5.jpg",
+      "url": "https://youtu.be/GGBgf8dcgyY?si=Ai6mvK04feLnhDzC",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-24-mortal-kombat-2",
+      "title": "Mortal Kombat 2",
+      "description": "",
+      "date": "2026-06-24",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510520/eventos/evt-2026-06-24-mortal-kombat-2.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-26-supergirl-woman-of-tomorrow",
+      "title": "Supergirl: Woman of Tomorrow",
+      "description": "",
+      "date": "2026-06-26",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510521/eventos/evt-2026-06-26-supergirl-woman-of-tomorrow.jpg",
+      "url": "https://www.imdb.com/title/tt26545593/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "pelicula",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-28-gran-premio-de-austria-2026",
+      "title": "Gran Premio de Austria 2026",
+      "description": "",
+      "date": "2026-06-28",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510522/eventos/evt-2026-06-28-gran-premio-de-austria-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-07-01-minions-3",
+      "title": "Minions 3",
+      "description": "",
+      "date": "2026-07-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510523/eventos/evt-2026-07-01-minions-3.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-01-x-men-97-temporada-2",
+      "title": "X-Men '97 - Temporada 2",
+      "description": "",
+      "date": "2026-07-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510524/eventos/evt-2026-07-01-x-men-97-temporada-2.jpg",
+      "url": "https://www.imdb.com/title/tt16026746/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "serie",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-03-the-death-of-robin-hood",
+      "title": "The Death of Robin Hood",
+      "description": "",
+      "date": "2026-07-03",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510526/eventos/evt-2026-07-03-the-death-of-robin-hood.png",
+      "url": "https://www.imdb.com/es-es/title/tt32273171/?ref_=ext_shr_lnk",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-03-young-washington",
+      "title": "Young Washington",
+      "description": "",
+      "date": "2026-07-03",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510525/eventos/evt-2026-07-03-young-washington.jpg",
+      "url": "https://youtu.be/-s8mqW03geo?si=8PgfA1E9swczTLgM",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-05-gran-premio-de-gran-bretana-2026",
+      "title": "Gran Premio de Gran Bretaña 2026",
+      "description": "",
+      "date": "2026-07-05",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510527/eventos/evt-2026-07-05-gran-premio-de-gran-bretana-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-07-10-moana",
+      "title": "Moana",
+      "description": "",
+      "date": "2026-07-10",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510528/eventos/evt-2026-07-10-moana.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-17-the-odyssey",
+      "title": "The Odyssey",
+      "description": "",
+      "date": "2026-07-17",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510529/eventos/evt-2026-07-17-the-odyssey.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-19-gran-premio-de-belgica-2026",
+      "title": "Gran Premio de Bélgica 2026",
+      "description": "",
+      "date": "2026-07-19",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510530/eventos/evt-2026-07-19-gran-premio-de-belgica-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-07-24-evil-dead-burn",
+      "title": "Evil Dead Burn",
+      "description": "",
+      "date": "2026-07-24",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510531/eventos/evt-2026-07-24-evil-dead-burn.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-26-gran-premio-de-hungria-2026",
+      "title": "Gran Premio de Hungría 2026",
+      "description": "",
+      "date": "2026-07-26",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510532/eventos/evt-2026-07-26-gran-premio-de-hungria-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-07-31-spider-man-brand-new-day",
+      "title": "Spider-Man: Brand New Day",
+      "description": "",
+      "date": "2026-07-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510533/eventos/evt-2026-07-31-spider-man-brand-new-day.jpg",
+      "url": "https://www.imdb.com/title/tt22084616/reference/?ref_=fn_all_ttl_1",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "pelicula",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-08-01-blue-beetle",
+      "title": "Blue Beetle",
+      "description": "",
+      "date": "2026-08-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510535/eventos/evt-2026-08-01-blue-beetle.jpg",
+      "url": "https://www.imdb.com/title/tt32621773/reference/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_blue%2520beetle%2520",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "serie",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-08-01-lanterns",
+      "title": "Lanterns",
+      "description": "",
+      "date": "2026-08-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510534/eventos/evt-2026-08-01-lanterns.jpg",
+      "url": "https://www.imdb.com/title/tt26545992/reference/?ref_=nm_ov_bio_lk",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "serie",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-08-23-gran-premio-de-los-paises-bajos-2026",
+      "title": "Gran Premio de los Países Bajos 2026",
+      "description": "",
+      "date": "2026-08-23",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510537/eventos/evt-2026-08-23-gran-premio-de-los-paises-bajos-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-08-28-coyote-vs-acme",
+      "title": "Coyote vs. Acme",
+      "description": "",
+      "date": "2026-08-28",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510538/eventos/evt-2026-08-28-coyote-vs-acme.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-09-06-gran-premio-de-italia-monza-2026",
+      "title": "Gran Premio de Italia (Monza) 2026",
+      "description": "",
+      "date": "2026-09-06",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510539/eventos/evt-2026-09-06-gran-premio-de-italia-monza-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-09-11-clayface",
+      "title": "Clayface",
+      "description": "",
+      "date": "2026-09-11",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510540/eventos/evt-2026-09-11-clayface.jpg",
+      "url": "https://www.imdb.com/title/tt34890576/reference/?ref_=fn_all_ttl_1",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "pelicula",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-09-13-gran-premio-de-espana-madrid-2026",
+      "title": "Gran Premio de España (Madrid) 2026",
+      "description": "",
+      "date": "2026-09-13",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510541/eventos/evt-2026-09-13-gran-premio-de-espana-madrid-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-09-26-gran-premio-de-azerbaiyan-2026",
+      "title": "Gran Premio de Azerbaiyán 2026",
+      "description": "",
+      "date": "2026-09-26",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510542/eventos/evt-2026-09-26-gran-premio-de-azerbaiyan-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-09-29-openai-devday",
+      "title": "OpenAI DevDay",
+      "description": "",
+      "date": "2026-09-29",
+      "category": "tecnologia",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510543/eventos/evt-2026-09-29-openai-devday.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "evt-2026-10-01-terrifier-4",
+      "title": "Terrifier 4",
+      "description": "",
+      "date": "2026-10-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510544/eventos/evt-2026-10-01-terrifier-4.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-10-09-the-social-reckoning",
+      "title": "The Social Reckoning",
+      "description": "",
+      "date": "2026-10-09",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510546/eventos/evt-2026-10-09-the-social-reckoning.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-10-11-gran-premio-de-singapur-2026",
+      "title": "Gran Premio de Singapur 2026",
+      "description": "",
+      "date": "2026-10-11",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510547/eventos/evt-2026-10-11-gran-premio-de-singapur-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-10-15-asterix-the-kingdom-of-nubia",
+      "title": "Asterix: The Kingdom of Nubia",
+      "description": "",
+      "date": "2026-10-15",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510548/eventos/evt-2026-10-15-asterix-the-kingdom-of-nubia.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-10-16-street-fighter",
+      "title": "Street Fighter",
+      "description": "",
+      "date": "2026-10-16",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510549/eventos/evt-2026-10-16-street-fighter.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-10-25-gran-premio-de-estados-unidos-austin-2026",
+      "title": "Gran Premio de Estados Unidos (Austin) 2026",
+      "description": "",
+      "date": "2026-10-25",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510550/eventos/evt-2026-10-25-gran-premio-de-estados-unidos-austin-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-11-01-gran-premio-de-mexico-2026",
+      "title": "Gran Premio de México 2026",
+      "description": "",
+      "date": "2026-11-01",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510551/eventos/evt-2026-11-01-gran-premio-de-mexico-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-11-01-vision-quest",
+      "title": "Vision Quest",
+      "description": "",
+      "date": "2026-11-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510552/eventos/evt-2026-11-01-vision-quest.jpg",
+      "url": "https://www.imdb.com/title/tt23112594/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "serie",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-11-08-gran-premio-de-brasil-2026",
+      "title": "Gran Premio de Brasil 2026",
+      "description": "",
+      "date": "2026-11-08",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510553/eventos/evt-2026-11-08-gran-premio-de-brasil-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-11-13-return-of-the-living-dead",
+      "title": "Return of the Living Dead",
+      "description": "",
+      "date": "2026-11-13",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510554/eventos/evt-2026-11-13-return-of-the-living-dead.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-11-19-grand-theft-auto-vi",
+      "title": "Grand Theft Auto VI",
+      "description": "",
+      "date": "2026-11-19",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510556/eventos/evt-2026-11-19-grand-theft-auto-vi.jpg",
+      "url": "https://youtu.be/VQRLujxTm3c?si=G0Unyvzz02urb8wG",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-11-20-the-hunger-games-sunrise-on-the-reaping",
+      "title": "The Hunger Games: Sunrise on the Reaping",
+      "description": "",
+      "date": "2026-11-20",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510557/eventos/evt-2026-11-20-the-hunger-games-sunrise-on-the-reaping.png",
+      "url": "https://youtu.be/dKSsF9Dtjtg?si=QugXdfk89_7Eo9p2",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-11-21-gran-premio-de-las-vegas-2026",
+      "title": "Gran Premio de Las Vegas 2026",
+      "description": "",
+      "date": "2026-11-21",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510559/eventos/evt-2026-11-21-gran-premio-de-las-vegas-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-11-29-gran-premio-de-catar-2026",
+      "title": "Gran Premio de Catar 2026",
+      "description": "",
+      "date": "2026-11-29",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510560/eventos/evt-2026-11-29-gran-premio-de-catar-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-12-06-gran-premio-de-abu-dabi-2026",
+      "title": "Gran Premio de Abu Dabi 2026",
+      "description": "",
+      "date": "2026-12-06",
+      "category": "deportes",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510561/eventos/evt-2026-12-06-gran-premio-de-abu-dabi-2026.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-12-18-avengers-doomsday",
+      "title": "Avengers: Doomsday",
+      "description": "",
+      "date": "2026-12-18",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510562/eventos/evt-2026-12-18-avengers-doomsday.jpg",
+      "url": "https://www.imdb.com/title/tt21357150/reference/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "pelicula",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-12-18-dune-part-three",
+      "title": "Dune: Part Three",
+      "description": "",
+      "date": "2026-12-18",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510563/eventos/evt-2026-12-18-dune-part-three.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-03-01-daredevil-born-again-temporada-3",
+      "title": "Daredevil: Born Again - Temporada 3",
+      "description": "",
+      "date": "2027-03-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510564/eventos/evt-2027-03-01-daredevil-born-again-temporada-3.jpg",
+      "url": "https://www.imdb.com/title/tt18936616/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "serie",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-03-26-the-resurrection-of-the-christ-part-one",
+      "title": "The Resurrection of the Christ: Part One",
+      "description": "",
+      "date": "2027-03-26",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510565/eventos/evt-2027-03-26-the-resurrection-of-the-christ-part-one.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-05-07-the-legend-of-zelda",
+      "title": "The Legend of Zelda",
+      "description": "",
+      "date": "2027-05-07",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510566/eventos/evt-2027-05-07-the-legend-of-zelda.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-05-28-star-wars-starfighter",
+      "title": "Star Wars: Starfighter",
+      "description": "",
+      "date": "2027-05-28",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510568/eventos/evt-2027-05-28-star-wars-starfighter.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-06-18-spider-man-beyond-the-spider-verse",
+      "title": "Spider-Man: Beyond the Spider-Verse",
+      "description": "",
+      "date": "2027-06-18",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510569/eventos/evt-2027-06-18-spider-man-beyond-the-spider-verse.jpg",
+      "url": "https://www.imdb.com/title/tt16360004/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "pelicula",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-06-30-shrek-5",
+      "title": "Shrek 5",
+      "description": "",
+      "date": "2027-06-30",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510570/eventos/evt-2027-06-30-shrek-5.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-09-07-a-quiet-place-part-iii",
+      "title": "A Quiet Place Part III",
+      "description": "",
+      "date": "2027-09-07",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510571/eventos/evt-2027-09-07-a-quiet-place-part-iii.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-10-01-the-batman-2",
+      "title": "The Batman 2",
+      "description": "",
+      "date": "2027-10-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510572/eventos/evt-2027-10-01-the-batman-2.jpg",
+      "url": "https://www.imdb.com/title/tt19850008/reference/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "pelicula",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-10-09-teenage-mutant-ninja-turtles-mutant-mayhem-2",
+      "title": "Teenage Mutant Ninja Turtles: Mutant Mayhem 2",
+      "description": "",
+      "date": "2027-10-09",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510573/eventos/evt-2027-10-09-teenage-mutant-ninja-turtles-mutant-mayhem-2.png",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-11-24-frozen-iii",
+      "title": "Frozen III",
+      "description": "",
+      "date": "2027-11-24",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510575/eventos/evt-2027-11-24-frozen-iii.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2027-12-17-avengers-secret-wars",
+      "title": "Avengers: Secret Wars",
+      "description": "",
+      "date": "2027-12-17",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510575/eventos/evt-2027-12-17-avengers-secret-wars.jpg",
+      "url": "https://www.imdb.com/title/tt21361444/reference/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "pelicula",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2028-01-01-dynamic-duo",
+      "title": "Dynamic Duo",
+      "description": "",
+      "date": "2028-01-01",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510577/eventos/evt-2028-01-01-dynamic-duo.jpg",
+      "url": "https://www.imdb.com/title/tt33549695/reference/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_dynamic%2520duo",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "pelicula",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2028-05-16-incredibles-3",
+      "title": "Incredibles 3",
+      "description": "",
+      "date": "2028-05-16",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510578/eventos/evt-2028-05-16-incredibles-3.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2028-07-28-black-panther-3",
+      "title": "Black Panther 3",
+      "description": "",
+      "date": "2028-07-28",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510579/eventos/evt-2028-07-28-black-panther-3.jpg",
+      "url": "https://www.imdb.com/title/tt37884905/reference/?ref_=nv_sr_srsg_6_tt_7_nm_1_in_0_q_black%2520panther",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "marvel"
+      ],
+      "brands": [
+        "marvel"
+      ],
+      "tags": [
+        "pelicula",
+        "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2029-12-21-avatar-4",
+      "title": "Avatar 4",
+      "description": "",
+      "date": "2029-12-21",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510581/eventos/evt-2029-12-21-avatar-4.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2031-12-19-avatar-5",
+      "title": "Avatar 5",
+      "description": "",
+      "date": "2031-12-19",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510582/eventos/evt-2031-12-19-avatar-5.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2077-12-31-batman-the-brave-y-the-bold",
+      "title": "Batman: The Brave & The Bold",
+      "description": "",
+      "date": "2077-12-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510584/eventos/evt-2077-12-31-batman-the-brave-y-the-bold.jpg",
+      "url": "https://www.imdb.com/title/tt19850008/reference/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "pelicula",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2077-12-31-black-canary",
+      "title": "Black Canary",
+      "description": "",
+      "date": "2077-12-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510585/eventos/evt-2077-12-31-black-canary.jpg",
+      "url": "https://www.imdb.com/title/tt15268188/reference/",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "pelicula",
+        "dc",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2077-12-31-zatanna",
+      "title": "Zatanna",
+      "description": "",
+      "date": "2077-12-31",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510586/eventos/evt-2077-12-31-zatanna.jpg",
+      "url": "https://www.imdb.com/title/tt14299920/reference/?ref_=tt_mv_close",
+      "status": "published",
+      "sites": [
+        "eventos",
+        "dc"
+      ],
+      "brands": [
+        "dc"
+      ],
+      "tags": [
+        "pelicula",
+        "dc",
+        "cineytv"
+      ]
     }
   ]
 }
