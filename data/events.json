@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-15T15:34:48.466Z",
+  "updatedAt": "2026-05-15T15:53:52.557Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1114,6 +1114,27 @@
       ]
     },
     {
+      "id": "evt-2026-05-19-lee-cronin-s-the-mummy",
+      "title": "Lee Cronin's The Mummy",
+      "description": "Película de USA de horror y mystery, dirigida por Lee Cronin, con Jack Reynor, Laia Costa. Estreno: Digital (USA).",
+      "date": "2026-05-19",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/lee-cronins-the-mummy/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "horror",
+        "mystery"
+      ],
+      "image": "images/events/evt-2026-05-19-lee-cronin-s-the-mummy.jpg"
+    },
+    {
       "id": "evt-2026-05-20-the-mandalorian-y-grogu",
       "title": "The Mandalorian & Grogu",
       "description": "",
@@ -1129,6 +1150,93 @@
       "tags": [
         "cineytv"
       ]
+    },
+    {
+      "id": "evt-2026-05-21-in-the-grey",
+      "title": "In the Grey",
+      "description": "Película de UK de action y thriller, dirigida por Guy Ritchie, con Henry Cavill, Jake Gyllenhaal. Estreno: Theatrical (Israel, Germany, Russia).",
+      "date": "2026-05-21",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/in-the-grey-2026/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "action",
+        "thriller"
+      ],
+      "image": "images/events/evt-2026-05-21-in-the-grey.jpg"
+    },
+    {
+      "id": "evt-2026-05-21-mother-mary",
+      "title": "Mother Mary",
+      "description": "Película de USA de fantasy y music y thriller y drama, dirigida por David Lowery, con Anne Hathaway, Michaela Coel. Estreno: Theatrical (Germany, Portugal).",
+      "date": "2026-05-21",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/mother-mary-2026/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "fantasy",
+        "music",
+        "thriller",
+        "drama"
+      ],
+      "image": "images/events/evt-2026-05-21-mother-mary.jpg"
+    },
+    {
+      "id": "evt-2026-05-22-beast",
+      "title": "Beast",
+      "description": "Película de USA de drama y action, dirigida por Tyler Atkins, con Daniel MacPherson, Luke Hemsworth. Estreno: Theatrical (Spain).",
+      "date": "2026-05-22",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/beast-2026-1/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "drama",
+        "action"
+      ],
+      "image": "images/events/evt-2026-05-22-beast.jpg"
+    },
+    {
+      "id": "evt-2026-05-22-star-wars-the-mandalorian-and-grogu",
+      "title": "Star Wars: The Mandalorian and Grogu",
+      "description": "Película de USA de science fiction y action y adventure, dirigida por Jon Favreau, con Pedro Pascal, Jeremy Allen White. Estreno: Theatrical (Spain).",
+      "date": "2026-05-22",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/star-wars-the-mandalorian-and-grogu/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "science fiction",
+        "action",
+        "adventure"
+      ],
+      "image": "images/events/evt-2026-05-22-star-wars-the-mandalorian-and-grogu.jpg"
     },
     {
       "id": "evt-2026-05-24-gran-premio-de-canada-2026",
@@ -1170,6 +1278,28 @@
       ]
     },
     {
+      "id": "evt-2026-05-29-backrooms",
+      "title": "Backrooms",
+      "description": "Película de USA de mystery y science fiction y horror, dirigida por Kane Parsons, con Chiwetel Ejiofor, Renate Reinsve. Estreno: Theatrical (USA).",
+      "date": "2026-05-29",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/backrooms-2026/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "mystery",
+        "science fiction",
+        "horror"
+      ],
+      "image": "images/events/evt-2026-05-29-backrooms.jpg"
+    },
+    {
       "id": "evt-2026-05-29-la-silla",
       "title": "La silla",
       "description": "Película española de thriller y horror, dirigida por Angel de la Cruz, con Jaime Lorente, Christina Ochoa.",
@@ -1189,6 +1319,28 @@
         "thriller",
         "horror"
       ]
+    },
+    {
+      "id": "evt-2026-05-29-the-drama",
+      "title": "The Drama",
+      "description": "Película de USA de romance y drama y comedy, dirigida por Kristoffer Borgli, con Zendaya, Robert Pattinson. Estreno: Theatrical (unknown country).",
+      "date": "2026-05-29",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/the-drama/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "romance",
+        "drama",
+        "comedy"
+      ],
+      "image": "images/events/evt-2026-05-29-the-drama.jpg"
     },
     {
       "id": "evt-2026-06-05-masters-of-the-universe",
@@ -2069,6 +2221,26 @@
       ]
     },
     {
+      "id": "evt-2027-05-06-the-resurrection-of-the-christ-part-two",
+      "title": "The Resurrection of the Christ: Part Two",
+      "description": "Película de USA de drama, dirigida por Mel Gibson, con Jaakko Ohtonen, Mariela Garriga. Estreno: Theatrical (USA).",
+      "date": "2027-05-06",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/the-resurrection-of-the-christ-part-two/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "drama"
+      ],
+      "image": "images/events/evt-2027-05-06-the-resurrection-of-the-christ-part-two.jpg"
+    },
+    {
       "id": "evt-2027-05-07-the-legend-of-zelda",
       "title": "The Legend of Zelda",
       "description": "",
@@ -2274,6 +2446,28 @@
       "tags": [
         "cineytv"
       ]
+    },
+    {
+      "id": "evt-2028-05-19-miami-vice-85",
+      "title": "Miami Vice '85",
+      "description": "Película de USA de action y drama y crime, dirigida por Joseph Kosinski, con Michael B. Jordan, Austin Butler. Estreno: Theatrical (Spain).",
+      "date": "2028-05-19",
+      "category": "cineytv",
+      "url": "https://letterboxd.com/film/miami-vice-85/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "action",
+        "drama",
+        "crime"
+      ],
+      "image": "images/events/evt-2028-05-19-miami-vice-85.jpg"
     },
     {
       "id": "evt-2028-07-28-black-panther-3",
