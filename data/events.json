@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-11T14:43:07.547Z",
-  "source": "airtable-export-cloudinary-images",
+  "updatedAt": "2026-05-15T15:34:48.466Z",
+  "source": "manual-local-images",
   "events": [
     {
       "id": "evt-2025-12-10-the-game-awards-2025",
@@ -1167,6 +1167,27 @@
         "serie",
         "marvel",
         "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-05-29-la-silla",
+      "title": "La silla",
+      "description": "Película española de thriller y horror, dirigida por Angel de la Cruz, con Jaime Lorente, Christina Ochoa.",
+      "date": "2026-05-29",
+      "category": "cineytv",
+      "image": "images/events/evt-2026-05-29-la-silla.jpg",
+      "url": "https://letterboxd.com/film/la-silla-2026/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "letterboxd",
+        "pelicula",
+        "thriller",
+        "horror"
       ]
     },
     {
