@@ -217,6 +217,7 @@ footer {
   flex-wrap: wrap;
   max-width: 700px;
   margin: auto;
+  padding: 0 1rem;
 }
 
 .botonesfiltro {
@@ -228,6 +229,16 @@ footer {
   border-radius: 0.5rem;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botonesfiltro:hover {
+  transform: translateY(-1px);
+}
+
+.botonesfiltro.active {
+  box-shadow: 0 0 0 2px rgba(173, 27, 233, 0.25);
 }
 
 .botonesfiltro.inactive {
@@ -235,10 +246,28 @@ footer {
   color: white;
 }
 
+.botonesfiltro:focus-visible,
+.calendar-btn:focus-visible,
+.buscador:focus-visible,
+.suscribirse:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+}
+
 .buscador {
   width: 100%;
   padding: 1rem;
   margin: 1.5rem 0rem 1.5rem 0rem;
+  border: 1px solid #d5d5d5;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.results-count {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0.75rem 1rem 0.5rem;
 }
 
 @media only screen and (max-width: 767px) {

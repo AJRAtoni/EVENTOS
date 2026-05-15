@@ -34,15 +34,16 @@
         </a>
     </div>
     <div class="filter-buttons">
-        <button onclick="filterEvents('todos')" class="botonesfiltro">TODOS</button>
-        <button onclick="filterEvents('cineytv')" class="botonesfiltro">CINEYTV</button>
-        <button onclick="filterEvents('curiosidades')" class="botonesfiltro">CURIOSIDADES</button>
-        <button onclick="filterEvents('deportes')" class="botonesfiltro">DEPORTES</button>
-        <button onclick="filterEvents('festividades')" class="botonesfiltro">FESTIVIDADES</button>
-        <button onclick="filterEvents('tecnologia')" class="botonesfiltro">TECNOLOGÍA</button>
-        <button onclick="filterEvents('videojuegos')" class="botonesfiltro">VIDEOJUEGOS</button>
-        <input type="text" id="searchInput" class="buscador" oninput="searchEvents()" placeholder="Buscar evento...">
+        <button onclick="filterEvents('todos')" class="botonesfiltro active" data-category="todos" aria-pressed="true">TODOS</button>
+        <button onclick="filterEvents('cineytv')" class="botonesfiltro" data-category="cineytv" aria-pressed="false">CINEYTV</button>
+        <button onclick="filterEvents('curiosidades')" class="botonesfiltro" data-category="curiosidades" aria-pressed="false">CURIOSIDADES</button>
+        <button onclick="filterEvents('deportes')" class="botonesfiltro" data-category="deportes" aria-pressed="false">DEPORTES</button>
+        <button onclick="filterEvents('festividades')" class="botonesfiltro" data-category="festividades" aria-pressed="false">FESTIVIDADES</button>
+        <button onclick="filterEvents('tecnologia')" class="botonesfiltro" data-category="tecnologia" aria-pressed="false">TECNOLOGÍA</button>
+        <button onclick="filterEvents('videojuegos')" class="botonesfiltro" data-category="videojuegos" aria-pressed="false">VIDEOJUEGOS</button>
+        <input type="text" id="searchInput" class="buscador" oninput="searchEvents()" placeholder="Buscar evento..." aria-label="Buscar evento por título o descripción">
     </div>
+    <p id="resultsCount" class="results-count" aria-live="polite"></p>
     <div id="events" class="row"></div>
     <footer>
         <script>
@@ -101,6 +102,8 @@
 
         const displayEvents = (events) => {
             eventsContainer.innerHTML = '';
+            const resultsCount = document.getElementById('resultsCount');
+            resultsCount.textContent = events.length === 1 ? '1 evento encontrado' : `${events.length} eventos encontrados`;
             if (events.length === 0) {
                 eventsContainer.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1 / -1; margin-top:2rem;">No se encontraron eventos próximos.</p>';
                 return;
@@ -110,8 +113,8 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 const imageHtml = url && url.trim() !== ''
-                    ? `<a href="${url}" target="_blank"><img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy"></a>`
-                    : `<img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy">`;
+                    ? `<a href="${url}" target="_blank" rel="noopener noreferrer"><img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy" decoding="async"></a>`
+                    : `<img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy" decoding="async">`;
 
                 card.innerHTML = `
                 ${imageHtml}
@@ -172,17 +175,20 @@
             if (categoria === 'todos') {
                 buttons.forEach(button => {
                     button.classList.remove('inactive');
-                    button.classList.add('active');
+                    button.classList.toggle('active', button.dataset.category === 'todos');
+                    button.setAttribute('aria-pressed', button.dataset.category === 'todos' ? 'true' : 'false');
                 });
             } else {
                 buttons.forEach(button => {
                     button.classList.remove('active');
                     button.classList.add('inactive');
+                    button.setAttribute('aria-pressed', 'false');
                 });
-                const activeButton = [...buttons].find(button => button.getAttribute('onclick') === `filterEvents('${categoria}')`);
+                const activeButton = [...buttons].find(button => button.dataset.category === categoria);
                 if (activeButton) {
                     activeButton.classList.add('active');
                     activeButton.classList.remove('inactive');
+                    activeButton.setAttribute('aria-pressed', 'true');
                 }
             }
             renderCurrentEvents();
