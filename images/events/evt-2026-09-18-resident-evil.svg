@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#020617"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <circle cx="1020" cy="120" r="180" fill="#f97316" opacity="0.16"/>
+  <circle cx="160" cy="560" r="220" fill="#f97316" opacity="0.10"/>
+  <text x="80" y="115" fill="#f97316" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="800" letter-spacing="4">CINEYTV</text>
+  <text x="80" y="330" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="900">Resident Evil</text>
+  <text x="80" y="430" fill="#cbd5e1" font-family="Inter,Arial,sans-serif" font-size="38" font-weight="600">2026-09-18</text>
+  <text x="80" y="590" fill="#94a3b8" font-family="Inter,Arial,sans-serif" font-size="28">eventos.ajra.es</text>
+</svg>

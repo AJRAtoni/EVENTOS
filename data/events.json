@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-15T15:53:52.557Z",
+  "updatedAt": "2026-05-15T17:37:44.478Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -673,23 +673,6 @@
       ]
     },
     {
-      "id": "evt-2026-03-15-98th-annual-academy-awards",
-      "title": "🏆 98th Annual Academy Awards",
-      "description": "",
-      "date": "2026-03-15",
-      "category": "cineytv",
-      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510479/eventos/evt-2026-03-15-98th-annual-academy-awards.jpg",
-      "url": "",
-      "status": "published",
-      "sites": [
-        "eventos"
-      ],
-      "brands": [],
-      "tags": [
-        "cineytv"
-      ]
-    },
-    {
       "id": "evt-2026-03-15-gran-premio-de-china-2026",
       "title": "Gran Premio de China 2026",
       "description": "",
@@ -704,6 +687,23 @@
       "brands": [],
       "tags": [
         "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-03-15-98th-annual-academy-awards",
+      "title": "🏆 98th Annual Academy Awards",
+      "description": "",
+      "date": "2026-03-15",
+      "category": "cineytv",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510479/eventos/evt-2026-03-15-98th-annual-academy-awards.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv"
       ]
     },
     {
@@ -972,23 +972,6 @@
       ]
     },
     {
-      "id": "evt-2026-04-22-dia-mundial-del-libro",
-      "title": "📚 Día Mundial del Libro",
-      "description": "",
-      "date": "2026-04-22",
-      "category": "festividades",
-      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510500/eventos/evt-2026-04-22-dia-mundial-del-libro.jpg",
-      "url": "",
-      "status": "published",
-      "sites": [
-        "eventos"
-      ],
-      "brands": [],
-      "tags": [
-        "festividades"
-      ]
-    },
-    {
       "id": "evt-2026-04-22-invincible-s4-episodio-8-finale",
       "title": "Invincible S4 - Episodio 8 (Finale)",
       "description": "",
@@ -1004,6 +987,23 @@
       "tags": [
         "serie",
         "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-04-22-dia-mundial-del-libro",
+      "title": "📚 Día Mundial del Libro",
+      "description": "",
+      "date": "2026-04-22",
+      "category": "festividades",
+      "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510500/eventos/evt-2026-04-22-dia-mundial-del-libro.jpg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "festividades"
       ]
     },
     {
@@ -1112,6 +1112,26 @@
       "tags": [
         "tecnologia"
       ]
+    },
+    {
+      "id": "evt-2026-05-19-google-i-o-2026",
+      "title": "Google I/O 2026",
+      "description": "Conferencia anual de Google para desarrolladores, con novedades de IA, Gemini, Android, web y herramientas de desarrollo.",
+      "date": "2026-05-19",
+      "category": "tecnologia",
+      "url": "https://io.google/2026/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia",
+        "ia",
+        "google",
+        "developers"
+      ],
+      "image": "images/events/evt-2026-05-19-google-i-o-2026.jpg"
     },
     {
       "id": "evt-2026-05-19-lee-cronin-s-the-mummy",
@@ -1343,6 +1363,26 @@
       "image": "images/events/evt-2026-05-29-the-drama.jpg"
     },
     {
+      "id": "evt-2026-06-02-microsoft-build-2026",
+      "title": "Microsoft Build 2026",
+      "description": "Conferencia de Microsoft para desarrolladores centrada en IA, Copilot, cloud, productividad y herramientas para crear software.",
+      "date": "2026-06-02",
+      "category": "tecnologia",
+      "url": "https://build.microsoft.com/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia",
+        "ia",
+        "microsoft",
+        "developers"
+      ],
+      "image": "images/events/evt-2026-06-02-microsoft-build-2026.png"
+    },
+    {
       "id": "evt-2026-06-05-masters-of-the-universe",
       "title": "Masters of the Universe",
       "description": "",
@@ -1409,6 +1449,26 @@
       "tags": [
         "tecnologia"
       ]
+    },
+    {
+      "id": "evt-2026-06-11-copa-mundial-fifa-2026-partido-inaugural",
+      "title": "Copa Mundial FIFA 2026 — partido inaugural",
+      "description": "Inicio de la Copa Mundial de la FIFA 2026, organizada por Canadá, México y Estados Unidos.",
+      "date": "2026-06-11",
+      "category": "deportes",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes",
+        "futbol",
+        "mundial",
+        "fifa"
+      ],
+      "image": "images/events/evt-2026-06-11-copa-mundial-fifa-2026-partido-inaugural.png"
     },
     {
       "id": "evt-2026-06-12-scary-movie-6",
@@ -1642,6 +1702,26 @@
       ]
     },
     {
+      "id": "evt-2026-07-19-copa-mundial-fifa-2026-final",
+      "title": "Copa Mundial FIFA 2026 — final",
+      "description": "Final de la Copa Mundial de la FIFA 2026.",
+      "date": "2026-07-19",
+      "category": "deportes",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes",
+        "futbol",
+        "mundial",
+        "fifa"
+      ],
+      "image": "images/events/evt-2026-07-19-copa-mundial-fifa-2026-final.png"
+    },
+    {
       "id": "evt-2026-07-19-gran-premio-de-belgica-2026",
       "title": "Gran Premio de Bélgica 2026",
       "description": "",
@@ -1776,6 +1856,25 @@
       ]
     },
     {
+      "id": "evt-2026-08-26-gamescom-2026",
+      "title": "gamescom 2026",
+      "description": "El mayor evento mundial de videojuegos y cultura gaming, celebrado en Colonia del 26 al 30 de agosto de 2026.",
+      "date": "2026-08-26",
+      "category": "videojuegos",
+      "url": "https://www.gamescom.global/en",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "gaming",
+        "gamescom"
+      ],
+      "image": "images/events/evt-2026-08-26-gamescom-2026.png"
+    },
+    {
       "id": "evt-2026-08-28-coyote-vs-acme",
       "title": "Coyote vs. Acme",
       "description": "",
@@ -1849,6 +1948,26 @@
       ]
     },
     {
+      "id": "evt-2026-09-18-resident-evil",
+      "title": "Resident Evil",
+      "description": "Nueva película de terror dirigida por Zach Cregger y basada en la franquicia de videojuegos Resident Evil.",
+      "date": "2026-09-18",
+      "category": "cineytv",
+      "url": "https://en.wikipedia.org/wiki/Resident_Evil_(2026_film)",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "pelicula",
+        "terror",
+        "videojuegos"
+      ],
+      "image": "images/events/evt-2026-09-18-resident-evil.svg"
+    },
+    {
       "id": "evt-2026-09-26-gran-premio-de-azerbaiyan-2026",
       "title": "Gran Premio de Azerbaiyán 2026",
       "description": "",
@@ -1898,6 +2017,26 @@
       "tags": [
         "cineytv"
       ]
+    },
+    {
+      "id": "evt-2026-10-09-avatar-aang-the-last-airbender",
+      "title": "Avatar Aang: The Last Airbender",
+      "description": "Película animada de fantasía de Avatar Studios, continuación del universo Avatar: The Last Airbender.",
+      "date": "2026-10-09",
+      "category": "cineytv",
+      "url": "https://en.wikipedia.org/wiki/Avatar_Aang:_The_Last_Airbender",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "pelicula",
+        "animacion",
+        "fantasia"
+      ],
+      "image": "images/events/evt-2026-10-09-avatar-aang-the-last-airbender.jpg"
     },
     {
       "id": "evt-2026-10-09-the-social-reckoning",
@@ -2058,6 +2197,26 @@
       ]
     },
     {
+      "id": "evt-2026-11-17-microsoft-ignite-2026",
+      "title": "Microsoft Ignite 2026",
+      "description": "Evento de Microsoft para tecnología empresarial, cloud, Microsoft 365, Copilot e IA aplicada a productividad.",
+      "date": "2026-11-17",
+      "category": "tecnologia",
+      "url": "https://ignite.microsoft.com/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "tecnologia",
+        "ia",
+        "microsoft",
+        "productividad"
+      ],
+      "image": "images/events/evt-2026-11-17-microsoft-ignite-2026.png"
+    },
+    {
       "id": "evt-2026-11-19-grand-theft-auto-vi",
       "title": "Grand Theft Auto VI",
       "description": "",
@@ -2182,6 +2341,66 @@
       ]
     },
     {
+      "id": "evt-2026-12-23-the-angry-birds-movie-3",
+      "title": "The Angry Birds Movie 3",
+      "description": "Tercera película animada basada en la franquicia Angry Birds.",
+      "date": "2026-12-23",
+      "category": "cineytv",
+      "url": "https://en.wikipedia.org/wiki/The_Angry_Birds_Movie_3",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "pelicula",
+        "animacion",
+        "videojuegos"
+      ],
+      "image": "images/events/evt-2026-12-23-the-angry-birds-movie-3.jpg"
+    },
+    {
+      "id": "evt-2027-02-05-ice-age-boiling-point",
+      "title": "Ice Age: Boiling Point",
+      "description": "Nueva entrega animada de la franquicia Ice Age, producida por 20th Century Animation.",
+      "date": "2027-02-05",
+      "category": "cineytv",
+      "url": "https://en.wikipedia.org/wiki/Ice_Age:_Boiling_Point",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "pelicula",
+        "animacion",
+        "comedia"
+      ],
+      "image": "images/events/evt-2027-02-05-ice-age-boiling-point.jpg"
+    },
+    {
+      "id": "evt-2027-02-14-super-bowl-lxi",
+      "title": "Super Bowl LXI",
+      "description": "61.ª edición del Super Bowl, uno de los mayores eventos deportivos y publicitarios de Estados Unidos.",
+      "date": "2027-02-14",
+      "category": "deportes",
+      "url": "https://en.wikipedia.org/wiki/Super_Bowl_LXI",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes",
+        "nfl",
+        "super-bowl",
+        "publicidad"
+      ],
+      "image": "images/events/evt-2027-02-14-super-bowl-lxi.png"
+    },
+    {
       "id": "evt-2027-03-01-daredevil-born-again-temporada-3",
       "title": "Daredevil: Born Again - Temporada 3",
       "description": "",
@@ -2202,6 +2421,26 @@
         "marvel",
         "cineytv"
       ]
+    },
+    {
+      "id": "evt-2027-03-19-sonic-the-hedgehog-4",
+      "title": "Sonic the Hedgehog 4",
+      "description": "Cuarta película de Sonic the Hedgehog, basada en la franquicia de videojuegos de SEGA.",
+      "date": "2027-03-19",
+      "category": "cineytv",
+      "url": "https://en.wikipedia.org/wiki/Sonic_the_Hedgehog_4_(film)",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "pelicula",
+        "videojuegos",
+        "aventura"
+      ],
+      "image": "images/events/evt-2027-03-19-sonic-the-hedgehog-4.svg"
     },
     {
       "id": "evt-2027-03-26-the-resurrection-of-the-christ-part-one",
