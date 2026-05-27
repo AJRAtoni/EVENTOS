@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-15T17:37:44.478Z",
+  "updatedAt": "2026-05-27T20:05:47.023Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1753,6 +1753,27 @@
       "brands": [],
       "tags": [
         "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-25-la-velada-del-ano-vi",
+      "title": "La Velada del Año VI",
+      "description": "Evento de boxeo y entretenimiento de Ibai Llanos. Edición 2026 en el Estadio La Cartuja de Sevilla.",
+      "date": "2026-07-25",
+      "category": "deportes",
+      "image": "images/events/evt-2026-07-25-la-velada-del-ano-vi.png",
+      "url": "https://www.infolavelada.com/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes",
+        "boxeo",
+        "streaming",
+        "ibai",
+        "velada-del-ano"
       ]
     },
     {
