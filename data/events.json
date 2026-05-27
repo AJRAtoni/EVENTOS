@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T20:05:47.023Z",
+  "updatedAt": "2026-05-27T20:27:52.219Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1417,6 +1417,44 @@
       ]
     },
     {
+      "id": "evt-2026-06-06-future-games-show-summer-showcase-2026",
+      "title": "Future Games Show Summer Showcase 2026",
+      "description": "Showcase digital de videojuegos con estrenos mundiales, tráilers exclusivos y novedades de próximos lanzamientos.",
+      "date": "2026-06-06",
+      "category": "videojuegos",
+      "image": "https://cdn.mos.cms.futurecdn.net/Yvqc7VzQnzBQCbhrRc4PkH.jpg",
+      "url": "https://www.futuregamesshow.com/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase",
+        "future-games-show"
+      ]
+    },
+    {
+      "id": "evt-2026-06-07-xbox-games-showcase-2026",
+      "title": "Xbox Games Showcase 2026",
+      "description": "Evento de Xbox con novedades de estudios first-party, socios third-party y el Gears of War: E-Day Direct a continuación.",
+      "date": "2026-06-07",
+      "category": "videojuegos",
+      "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/03/2026_Showcase_DoubleFeature_16x9-1-503e797dfa7152ff8c4e-1024x576.jpg",
+      "url": "https://news.xbox.com/es-latam/2026/03/30/xbox-games-showcase-2026-seguido-de-gears-of-war-e-day-direct-se-transmitira-el-7-de-junio-ademas-xbox-fanfest-regresa/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase",
+        "xbox"
+      ]
+    },
+    {
       "id": "evt-2026-06-07-gran-premio-de-monaco-2026",
       "title": "Gran Premio de Mónaco 2026",
       "description": "",
@@ -1597,11 +1635,11 @@
     {
       "id": "evt-2026-07-01-x-men-97-temporada-2",
       "title": "X-Men '97 - Temporada 2",
-      "description": "",
+      "description": "Estreno de la segunda temporada de la serie animada de Marvel Animation en Disney+.",
       "date": "2026-07-01",
       "category": "cineytv",
       "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510524/eventos/evt-2026-07-01-x-men-97-temporada-2.jpg",
-      "url": "https://www.imdb.com/title/tt16026746/",
+      "url": "https://www.disneyplus.com/es-us/browse/entity-8dc91ed4-cdca-4fab-9723-d3d42f382d34",
       "status": "published",
       "sites": [
         "eventos",
@@ -1613,6 +1651,25 @@
       "tags": [
         "serie",
         "marvel",
+        "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-01-enola-holmes-3",
+      "title": "Enola Holmes 3",
+      "description": "Estreno en Netflix de la tercera película de Enola Holmes, con Millie Bobby Brown.",
+      "date": "2026-07-01",
+      "category": "cineytv",
+      "image": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQTrK4cwZqjLk7B5QBOfMQ5jA3Ckmr7Ng1wP0u2OlTR1fl59GQ-riZnKhCnoFYoJ3OhJtiMio29QSS3gT42-xPLEtZ75J_mpz9c3nvHnqOzZWCZq_L9tQvyVMJq-QA6VE_nn-FrVAjzoD0xU6B-_eB5Ch.jpg?r=e5d",
+      "url": "https://www.netflix.com/title/81605886",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "pelicula",
+        "netflix",
         "cineytv"
       ]
     },
