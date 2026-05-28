@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T20:27:52.219Z",
+  "updatedAt": "2026-05-28T17:12:58.501Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1414,6 +1414,28 @@
       "brands": [],
       "tags": [
         "videojuegos"
+      ]
+    },
+    {
+      "id": "evt-2026-06-05-el-cabo-del-miedo-cape-fear",
+      "title": "El cabo del miedo (Cape Fear)",
+      "description": "Serie thriller de terror psicológico de Apple TV protagonizada por Javier Bardem, Amy Adams y Patrick Wilson. Estreno global el 5 de junio de 2026.",
+      "date": "2026-06-05",
+      "category": "cineytv",
+      "image": "images/events/evt-2026-06-05-el-cabo-del-miedo-cape-fear.jpg",
+      "url": "https://www.apple.com/tv-pr/news/2026/02/apple-tvs-cape-fear-starring-academy-award-winner-javier-bardem-and-academy-award-nominee-amy-adams-to-make-global-debut-on-friday-june-5/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "apple-tv",
+        "serie",
+        "thriller",
+        "terror",
+        "javier-bardem"
       ]
     },
     {
