@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-28T17:12:58.501Z",
+  "updatedAt": "2026-06-02T11:08:30.361Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1381,6 +1381,27 @@
         "developers"
       ],
       "image": "images/events/evt-2026-06-02-microsoft-build-2026.png"
+    },
+    {
+      "id": "evt-2026-06-04-rosalia-lux-tour-2026",
+      "title": "Rosalía: LUX TOUR 2026",
+      "description": "Rosalía: LUX TOUR 2026 · Kaseya Center, Miami · 8:30 PM",
+      "date": "2026-06-04",
+      "category": "curiosidades",
+      "image": "images/events/evt-2026-06-04-rosalia-lux-tour-2026.jpg",
+      "url": "https://www.ticketmaster.com/rosalia-lux-tour-2026-miami-florida-06-04-2026/event/0D00636E0CE06340",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "curiosidades",
+        "musica",
+        "concierto",
+        "rosalia",
+        "miami"
+      ]
     },
     {
       "id": "evt-2026-06-05-masters-of-the-universe",
