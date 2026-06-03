@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-03T18:32:33Z",
+  "updatedAt": "2026-06-03T19:59:22Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1880,6 +1880,27 @@
       "brands": [],
       "tags": [
         "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-23-amazon-prime-day-2026",
+      "title": "Amazon Prime Day 2026",
+      "description": "Amazon Prime Day 2026: evento de ofertas de Amazon del 23 al 26 de junio.",
+      "date": "2026-06-23",
+      "category": "curiosidades",
+      "image": "images/events/evt-2026-06-23-amazon-prime-day-2026.jpg",
+      "url": "https://www.amazon.com/primeday",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "curiosidades",
+        "ecommerce",
+        "amazon",
+        "prime-day",
+        "ofertas"
       ]
     },
     {
