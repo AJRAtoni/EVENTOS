@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T11:08:30.361Z",
+  "updatedAt": "2026-06-03T18:32:33Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1363,6 +1363,24 @@
       "image": "images/events/evt-2026-05-29-the-drama.jpg"
     },
     {
+      "id": "evt-2026-06-01-the-mix-summer-game-showcase",
+      "title": "The Mix Summer Game Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 18:00.",
+      "date": "2026-06-01",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-01-the-mix-summer-game-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
       "id": "evt-2026-06-02-microsoft-build-2026",
       "title": "Microsoft Build 2026",
       "description": "Conferencia de Microsoft para desarrolladores centrada en IA, Copilot, cloud, productividad y herramientas para crear software.",
@@ -1381,6 +1399,64 @@
         "developers"
       ],
       "image": "images/events/evt-2026-06-02-microsoft-build-2026.png"
+    },
+    {
+      "id": "evt-2026-06-02-black-voices-in-gaming",
+      "title": "Black Voices in Gaming",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 21:00.",
+      "date": "2026-06-02",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-02-black-voices-in-gaming.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
+      "id": "evt-2026-06-02-state-of-play",
+      "title": "State of Play",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 23:00.",
+      "date": "2026-06-02",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-02-state-of-play.png",
+      "url": "https://blog.playstation.com/2026/05/20/state-of-play-returns-tuesday-june-2/",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "playstation",
+        "state-of-play",
+        "ps5",
+        "marvel-wolverine",
+        "showcase"
+      ]
+    },
+    {
+      "id": "evt-2026-06-04-latin-american-games-showcase",
+      "title": "Latin American Games Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 23:00.",
+      "date": "2026-06-04",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-04-latin-american-games-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
     },
     {
       "id": "evt-2026-06-04-rosalia-lux-tour-2026",
@@ -1404,6 +1480,24 @@
       ]
     },
     {
+      "id": "evt-2026-06-05-women-led-games-showcase",
+      "title": "Women Led Games Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 01:00.",
+      "date": "2026-06-05",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-05-women-led-games-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
       "id": "evt-2026-06-05-masters-of-the-universe",
       "title": "Masters of the Universe",
       "description": "",
@@ -1423,7 +1517,7 @@
     {
       "id": "evt-2026-06-05-summer-game-fest-2026",
       "title": "Summer Game Fest 2026",
-      "description": "",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 23:00.",
       "date": "2026-06-05",
       "category": "videojuegos",
       "image": "https://res.cloudinary.com/ajratoni/image/upload/v1778510513/eventos/evt-2026-06-05-summer-game-fest-2026.jpg",
@@ -1434,7 +1528,9 @@
       ],
       "brands": [],
       "tags": [
-        "videojuegos"
+        "videojuegos",
+        "showcase",
+        "summer-game-fest"
       ]
     },
     {
@@ -1460,6 +1556,116 @@
       ]
     },
     {
+      "id": "evt-2026-06-06-day-of-the-devs",
+      "title": "Day of the Devs",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 01:00.",
+      "date": "2026-06-06",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-06-day-of-the-devs.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase",
+        "day-of-the-devs"
+      ]
+    },
+    {
+      "id": "evt-2026-06-06-southeast-asian-games-showcase",
+      "title": "Southeast Asian Games Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 17:00.",
+      "date": "2026-06-06",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-06-southeast-asian-games-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
+      "id": "evt-2026-06-06-wholesome-direct",
+      "title": "Wholesome Direct",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 18:00.",
+      "date": "2026-06-06",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-06-wholesome-direct.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase",
+        "wholesome"
+      ]
+    },
+    {
+      "id": "evt-2026-06-06-story-rich-showcase",
+      "title": "Story Rich Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 19:00.",
+      "date": "2026-06-06",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-06-story-rich-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
+      "id": "evt-2026-06-06-green-games-showcase",
+      "title": "Green Games Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 20:00.",
+      "date": "2026-06-06",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-06-green-games-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
+      "id": "evt-2026-06-06-gayming-pride-parade",
+      "title": "Gayming Pride Parade",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 21:00.",
+      "date": "2026-06-06",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-06-gayming-pride-parade.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
       "id": "evt-2026-06-06-future-games-show-summer-showcase-2026",
       "title": "Future Games Show Summer Showcase 2026",
       "description": "Showcase digital de videojuegos con estrenos mundiales, tráilers exclusivos y novedades de próximos lanzamientos.",
@@ -1479,9 +1685,45 @@
       ]
     },
     {
+      "id": "evt-2026-06-07-frosty-games-showcase",
+      "title": "Frosty Games Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 00:00.",
+      "date": "2026-06-07",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-07-frosty-games-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
+      "id": "evt-2026-06-07-n3-2026",
+      "title": "Ñ3 2026",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 17:30.",
+      "date": "2026-06-07",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-07-n3-2026.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase"
+      ]
+    },
+    {
       "id": "evt-2026-06-07-xbox-games-showcase-2026",
       "title": "Xbox Games Showcase 2026",
-      "description": "Evento de Xbox con novedades de estudios first-party, socios third-party y el Gears of War: E-Day Direct a continuación.",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 19:00.",
       "date": "2026-06-07",
       "category": "videojuegos",
       "image": "https://xboxwire.thesourcemediaassets.com/sites/2/2026/03/2026_Showcase_DoubleFeature_16x9-1-503e797dfa7152ff8c4e-1024x576.jpg",
@@ -1495,6 +1737,44 @@
         "videojuegos",
         "showcase",
         "xbox"
+      ]
+    },
+    {
+      "id": "evt-2026-06-07-pc-gaming-show",
+      "title": "PC Gaming Show",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 21:00.",
+      "date": "2026-06-07",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-07-pc-gaming-show.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase",
+        "pc-gaming-show"
+      ]
+    },
+    {
+      "id": "evt-2026-06-07-deutsche-indie-showcase",
+      "title": "Deutsche Indie Showcase",
+      "description": "Showcase de videojuegos. Hora indicada en la agenda: 23:00.",
+      "date": "2026-06-07",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-07-deutsche-indie-showcase.svg",
+      "url": "",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase",
+        "indie"
       ]
     },
     {
