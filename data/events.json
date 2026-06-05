@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-03T19:59:22Z",
+  "updatedAt": "2026-06-05T00:44:07Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -2311,6 +2311,26 @@
       "brands": [],
       "tags": [
         "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-08-28-elden-ring-tarnished-edition",
+      "title": "Elden Ring: Tarnished Edition",
+      "description": "Lanzamiento de Elden Ring: Tarnished Edition para Nintendo Switch 2.",
+      "date": "2026-08-28",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-08-28-elden-ring-tarnished-edition.jpg",
+      "url": "https://en.bandainamcoent.eu/elden-ring/elden-ring-tarnished-edition",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "nintendo-switch-2",
+        "elden-ring",
+        "bandai-namco"
       ]
     },
     {
