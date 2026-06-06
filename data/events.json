@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-05T00:44:07Z",
+  "updatedAt": "2026-06-06T00:17:37Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1846,6 +1846,26 @@
       "brands": [],
       "tags": [
         "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-06-12-disclosure-day",
+      "title": "Disclosure Day",
+      "description": "Estreno en cines/IMAX en EE. UU. de la película de ciencia ficción dirigida por Steven Spielberg, con Emily Blunt, Josh O'Connor, Colin Firth, Eve Hewson y Colman Domingo.",
+      "date": "2026-06-12",
+      "category": "cineytv",
+      "image": "images/events/evt-2026-06-12-disclosure-day.jpg",
+      "url": "https://en.wikipedia.org/wiki/Disclosure_Day",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "cineytv",
+        "pelicula",
+        "ciencia-ficcion",
+        "steven-spielberg"
       ]
     },
     {
