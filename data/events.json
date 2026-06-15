@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-08T18:31:47Z",
+  "updatedAt": "2026-06-15T16:57:27Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -2124,6 +2124,27 @@
       "brands": [],
       "tags": [
         "cineytv"
+      ]
+    },
+    {
+      "id": "evt-2026-07-11-ufc-329-mcgregor-vs-holloway-2",
+      "title": "UFC 329: McGregor vs Holloway 2",
+      "description": "Conor McGregor vuelve al octágono contra Max Holloway en el main event de UFC 329, en el T-Mobile Arena de Las Vegas.",
+      "date": "2026-07-11",
+      "category": "deportes",
+      "image": "images/events/evt-2026-07-11-ufc-329-mcgregor-vs-holloway-2.jpg",
+      "url": "https://www.ufc.com/event/ufc-329",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "deportes",
+        "ufc",
+        "mma",
+        "conor-mcgregor",
+        "max-holloway"
       ]
     },
     {
