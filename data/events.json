@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-15T16:57:27Z",
+  "updatedAt": "2026-06-15T17:08:06Z",
   "source": "manual-local-images",
   "events": [
     {
@@ -1904,6 +1904,28 @@
       "brands": [],
       "tags": [
         "deportes"
+      ]
+    },
+    {
+      "id": "evt-2026-06-17-state-of-unreal-2026",
+      "title": "State of Unreal 2026",
+      "description": "Transmisión en directo de State of Unreal 2026 para conocer novedades de las herramientas y servicios de Unreal Engine para desarrolladores, destacados de la comunidad y avances de lo que está por venir. Hora: 16:00 CEST.",
+      "date": "2026-06-17",
+      "category": "videojuegos",
+      "image": "images/events/evt-2026-06-17-state-of-unreal-2026.jpg",
+      "url": "https://www.unrealengine.com/events/unreal-fest-chicago-2026-state-of-unreal",
+      "status": "published",
+      "sites": [
+        "eventos"
+      ],
+      "brands": [],
+      "tags": [
+        "videojuegos",
+        "showcase",
+        "unreal-engine",
+        "epic-games",
+        "gamedev",
+        "tecnologia"
       ]
     },
     {
