@@ -1,52 +1,28 @@
-# eventos.ajra.es
+# Eventos AJRA
 
-Sitio web estático para publicar y consultar eventos de AJRA.
+[eventos.ajra.es](https://eventos.ajra.es) es la agenda de AJRA para tener a mano las fechas que más interesan: cine, series, videojuegos, tecnología, deporte, festividades y cultura geek.
 
-## Descripción
+La idea es sencilla: reunir en un mismo lugar estrenos, lanzamientos, convenciones y otros eventos relevantes para no perderlos de vista.
 
-Este proyecto genera una página simple (sin build ni dependencias de frontend) que:
+## Qué puedes encontrar
 
-- carga eventos desde Airtable mediante JavaScript en el navegador;
-- muestra tarjetas de eventos con filtros por categoría y buscador;
-- permite descargar eventos en formato `.ics` para calendario.
+- Fechas de estreno de películas y series.
+- Lanzamientos de videojuegos y novedades de tecnología o entretenimiento.
+- Convenciones, ferias, festividades y otros eventos especiales.
+- Citas deportivas y curiosidades para marcar en el calendario.
+- Filtros por categoría y un buscador para localizar rápidamente lo que te interesa.
+- La opción de añadir cada cita a tu calendario.
 
-## Estructura del proyecto
+## Visita la agenda
 
-- `index.html`: marcado principal e integración JavaScript para obtener y renderizar eventos.
-- `css/eventos.css`: estilos globales y reglas responsive.
-- `images/`: recursos visuales (logo, favicon, etc.).
-- `CNAME`: dominio personalizado para GitHub Pages.
-- `scripts/export-airtable-events.mjs`: script auxiliar para exportación de eventos.
-- `data/`: datos y documentación de apoyo para eventos.
+La agenda está disponible en [eventos.ajra.es](https://eventos.ajra.es).
 
-## Ejecución en local
+## Sobre el proyecto
 
-No hay instalación de paquetes ni compilación. Solo hace falta servir archivos estáticos:
+EVENTOS es un proyecto de AJRA pensado como una referencia rápida, visual y fácil de consultar. La información se actualiza para que la agenda siga siendo útil, aunque las fechas y los detalles de cada evento pueden cambiar.
 
-```bash
-python3 -m http.server 8000
-```
+Si quieres colaborar o proponer una cita para la agenda, puedes abrir una incidencia en este repositorio.
 
-Después abre:
+## Para actualizar la web
 
-- http://localhost:8000
-
-## Flujo recomendado de revisión manual
-
-Antes de publicar cambios, comprobar en navegador:
-
-1. La página carga sin errores de consola.
-2. Se renderizan correctamente las tarjetas de eventos.
-3. Filtros y buscador funcionan en conjunto.
-4. La descarga `.ics` genera eventos válidos.
-5. El diseño responde bien en móvil y escritorio.
-
-## Despliegue
-
-El proyecto está pensado para GitHub Pages con dominio personalizado configurado en `CNAME`.
-
-## Buenas prácticas
-
-- Mantener HTML/CSS/JS simples y sin librerías innecesarias.
-- No subir secretos ni tokens privados al repositorio.
-- Mantener el texto visible para usuarios en español, salvo necesidad específica.
+La página se publica automáticamente desde este repositorio. Antes de dar por bueno un cambio, conviene comprobar que los eventos, los filtros, el buscador y la descarga de calendario funcionan correctamente tanto en móvil como en escritorio.
