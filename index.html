@@ -53,14 +53,10 @@
     </footer>
 
     <script>
-        // La web consulta la tabla compartida de Airtable directamente.
+        // Los eventos se cargan desde el servidor del sitio para no exponer credenciales.
         const CONFIG = {
-            AIRTABLE: {
-                TOKEN: 'patv41n63HLpkM4VN.' + 'bbe008721d08d1e969c3398df4550c53a1704b64ed752cc16ae8060a0bd373b3',
-                BASE_ID: 'apphXPfmF1OwvCPWC',
-                TABLE_NAME: 'eventos',
-                CATEGORY_FIELD: 'CategoriaEvento'
-            }
+            DATA_ENDPOINT: '/api/events',
+            CATEGORY_FIELD: 'CategoriaEvento'
         };
 
         const eventsContainer = document.getElementById('events');
@@ -107,7 +103,7 @@
                 eventDate,
                 descripcion: fields.Descripcion || '',
                 imagen: Array.isArray(fields.Imagen) && fields.Imagen.length > 0 ? fields.Imagen[0].url : placeholderimagen,
-                categoria: fields[CONFIG.AIRTABLE.CATEGORY_FIELD] || 'General',
+                categoria: fields[CONFIG.CATEGORY_FIELD] || 'General',
                 url: fields.IMDbURL || fields.URL || ''
             };
         };
@@ -149,19 +145,6 @@
             } catch (error) {
                 // Si el navegador bloquea localStorage, la página sigue funcionando sin caché.
             }
-        };
-
-        const buildAirtableUrl = (offset = '') => {
-            const url = new URL(`https://api.airtable.com/v0/${CONFIG.AIRTABLE.BASE_ID}/${encodeURIComponent(CONFIG.AIRTABLE.TABLE_NAME)}`);
-            const futureEventsFormula = "OR(IS_SAME({FechaOrden}, TODAY(), 'day'), IS_AFTER({FechaOrden}, TODAY()))";
-
-            url.searchParams.set('sort[0][field]', 'FechaOrden');
-            url.searchParams.set('sort[0][direction]', 'asc');
-            url.searchParams.set('pageSize', '100');
-            url.searchParams.set('filterByFormula', futureEventsFormula);
-            if (offset) url.searchParams.set('offset', offset);
-
-            return url.toString();
         };
 
         const displayEvents = (events) => {
@@ -219,37 +202,22 @@
             }
 
             try {
-                // Airtable devuelve un máximo de 100 registros por petición.
-                // Recorremos las páginas para no omitir eventos próximos.
-                const records = [];
-                let offset = '';
+                const response = await fetch(CONFIG.DATA_ENDPOINT, {
+                    headers: { Accept: 'application/json' }
+                });
 
-                do {
-                    const response = await fetch(buildAirtableUrl(offset), {
-                        headers: {
-                            Authorization: `Bearer ${CONFIG.AIRTABLE.TOKEN}`
-                        }
-                    });
+                if (!response.ok) {
+                    throw new Error(`Error cargando eventos: ${response.status} ${response.statusText}`);
+                }
 
-                    if (!response.ok) {
-                        throw new Error(`Error Airtable: ${response.status} ${response.statusText}`);
-                    }
-
-                    const data = await response.json();
-                    records.push(...(data.records || []));
-                    offset = data.offset || '';
-
-                    if (records.length > 0) {
-                        allEvents = normalizeEvents(records);
-                        renderCurrentEvents();
-                    }
-                } while (offset);
+                const data = await response.json();
+                const records = Array.isArray(data.records) ? data.records : [];
 
                 allEvents = normalizeEvents(records);
                 cacheEvents(allEvents);
                 renderCurrentEvents();
             } catch (error) {
-                console.error('Error al cargar eventos desde Airtable:', error);
+                console.error('Error al cargar eventos:', error);
                 if (!cachedEvents || cachedEvents.length === 0) {
                     eventsContainer.innerHTML = `<p style="text-align:center; color: red; width:100%; grid-column: 1 / -1;">Error cargando eventos: ${error.message}</p>`;
                 }
