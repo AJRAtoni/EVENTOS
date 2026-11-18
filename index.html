@@ -3,79 +3,147 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f0f0f0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light">
     <title>Eventos by AJRA</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.webp">
-    <meta name="description" content="EVENTOS by AJRA">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=ajra-logo">
+    <link rel="apple-touch-icon" href="/favicon.svg?v=ajra-logo">
+    <meta name="description" content="Estrenos, tecnología, videojuegos, deportes y fechas que merece la pena recordar.">
     <meta property="og:title" content="EVENTOS by AJRA">
-    <meta property="og:description" content="Calendario de eventos de AJRA">
-    <meta property="og:image" content="images/logo.webp">
+    <meta property="og:description" content="Estrenos, tecnología, videojuegos, deportes y fechas que merece la pena recordar.">
+    <meta property="og:image" content="https://eventos.ajra.es/images/eventos-social-20261020.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Eventos by AJRA. El futuro tiene fecha.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Eventos by AJRA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eventos by AJRA">
+    <meta name="twitter:description" content="Estrenos, tecnología, videojuegos, deportes y fechas que merece la pena recordar.">
+    <meta name="twitter:image" content="https://eventos.ajra.es/images/eventos-social-20261020.png">
+    <meta name="twitter:image:alt" content="Eventos by AJRA. El futuro tiene fecha.">
     <meta property="og:url" content="https://eventos.ajra.es">
     <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="d475f634-84bb-448f-9a73-b0576d734398"
         async></script>
-    <link href="css/eventos.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="css/eventos.css?v=20261022-white-buttons" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <header>
-        <a href="https://ajra.es">
-            <img src="images/AJRA.webp" alt="AJRA" width="150" height="150" class="avatar">
-        </a>
-    </header>
-    <div class="home">
-        <img src="images/logo.webp" alt="AJRA" width="225" height="225">
+    <a class="skip-link" href="#eventos-section">Saltar a los eventos</a>
 
-        <a
-            href="webcal://calendar.google.com/calendar/ical/84d41ef1a1a31d6e5fa01c477a7b7c5e93ca524098f0474afadac4f50d6fd64e@group.calendar.google.com/public/basic.ics">
-            <h2 class="suscribirse">SUSCRIBETE AL CALENDARIO</h2>
-        </a>
-    </div>
-    <div class="filter-buttons">
-        <button onclick="filterEvents('todos')" class="botonesfiltro active" data-category="todos" aria-pressed="true">TODOS</button>
-        <button onclick="filterEvents('cineytv')" class="botonesfiltro" data-category="cineytv" aria-pressed="false">CINEYTV</button>
-        <button onclick="filterEvents('curiosidades')" class="botonesfiltro" data-category="curiosidades" aria-pressed="false">CURIOSIDADES</button>
-        <button onclick="filterEvents('deportes')" class="botonesfiltro" data-category="deportes" aria-pressed="false">DEPORTES</button>
-        <button onclick="filterEvents('festividades')" class="botonesfiltro" data-category="festividades" aria-pressed="false">FESTIVIDADES</button>
-        <button onclick="filterEvents('tecnologia')" class="botonesfiltro" data-category="tecnologia" aria-pressed="false">TECNOLOGÍA</button>
-        <button onclick="filterEvents('videojuegos')" class="botonesfiltro" data-category="videojuegos" aria-pressed="false">VIDEOJUEGOS</button>
-        <input type="text" id="searchInput" class="buscador" oninput="searchEvents()" placeholder="Buscar evento..." aria-label="Buscar evento por título o descripción">
-    </div>
-    <p id="resultsCount" class="results-count" aria-live="polite"></p>
-    <div id="events" class="row"></div>
-    <footer>
-        <script>
-            document.write(new Date().getFullYear());
-        </script>
-        &copy; Desarrollado con 🧠 & 💛 por &lt;/AJRA&gt;
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="https://ajra.es" aria-label="Ir a AJRA.es">
+                <img class="brand-logo" src="/images/ajra-logo.svg" alt="" width="36" height="36">
+                <span class="brand-title">EVENTOS <small>by AJRA</small></span>
+            </a>
+
+            <a class="subscribe-button"
+                href="webcal://calendar.google.com/calendar/ical/84d41ef1a1a31d6e5fa01c477a7b7c5e93ca524098f0474afadac4f50d6fd64e@group.calendar.google.com/public/basic.ics">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+                    <path d="M7 3v3m10-3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm6 7v5m-2.5-2.5h5" />
+                </svg>
+                <span>Suscribirme</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <p class="eyebrow">El Calendario de Eventos de AJRA</p>
+            <h1 id="page-title">El futuro<br><span>tiene fecha.</span></h1>
+            <p class="hero-copy">Estrenos, tecnología, videojuegos, deportes y esas fechas que merece la pena recordar.</p>
+        </section>
+
+        <section id="eventos-section" class="event-browser" aria-label="Explorar eventos" tabindex="-1">
+            <div class="search-shell">
+                <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m16.5 16.5 4 4"></path>
+                </svg>
+                <label class="sr-only" for="searchInput">Buscar por título o descripción</label>
+                <input type="search" id="searchInput" class="search-input"
+                    placeholder="Busca un estreno, lanzamiento o evento…" autocomplete="off" enterkeyhint="search">
+                <button id="clearSearch" class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+                        <path d="m8 8 8 8m0-8-8 8"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="filter-scroll" aria-label="Filtrar por categoría">
+                <div class="filter-buttons" role="group" aria-label="Categorías">
+                    <button type="button" class="filter-button active" data-category="todos" aria-pressed="true">Todos</button>
+                    <button type="button" class="filter-button" data-category="cineytv" aria-pressed="false">Cine y TV</button>
+                    <button type="button" class="filter-button" data-category="curiosidades" aria-pressed="false">Curiosidades</button>
+                    <button type="button" class="filter-button" data-category="deportes" aria-pressed="false">Deportes</button>
+                    <button type="button" class="filter-button" data-category="festividades" aria-pressed="false">Festividades</button>
+                    <button type="button" class="filter-button" data-category="tecnologia" aria-pressed="false">Tecnología</button>
+                    <button type="button" class="filter-button" data-category="videojuegos" aria-pressed="false">Videojuegos</button>
+                </div>
+            </div>
+
+            <div class="results-heading">
+                <h2>Próximos eventos</h2>
+                <p id="resultsCount" class="results-count" aria-live="polite">Cargando agenda…</p>
+            </div>
+
+            <p id="agendaStatus" role="status" hidden></p>
+
+            <div id="eventos" class="events-grid" aria-busy="true">
+                <div class="skeleton-card" aria-hidden="true"><span></span><i></i><b></b></div>
+                <div class="skeleton-card" aria-hidden="true"><span></span><i></i><b></b></div>
+                <div class="skeleton-card" aria-hidden="true"><span></span><i></i><b></b></div>
+                <div class="skeleton-card" aria-hidden="true"><span></span><i></i><b></b></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span id="currentYear"></span> © Creado con <span aria-label="cerebro">🧠</span> y <span aria-label="corazón azul">💙</span> por
+        <a href="https://ajra.es">&lt;/AJRA&gt;</a>
     </footer>
 
     <script>
-        // Los eventos se cargan desde el servidor del sitio para no exponer credenciales.
         const CONFIG = {
-            DATA_ENDPOINT: '/api/events',
+            DATA_ENDPOINT: 'api/events.json',
             CATEGORY_FIELD: 'CategoriaEvento'
         };
 
-        const eventsContainer = document.getElementById('events');
-        const placeholderimagen = 'images/logo.webp';
-        const CACHE_KEY = 'ajra-eventos-cache-v1';
-        const CACHE_TTL_MS = 10 * 60 * 1000;
+        const PLACEHOLDER_IMAGE = 'images/event-placeholder.svg';
+        const CACHE_KEY = 'ajra-eventos-cache-v3';
+        const categoryLabels = {
+            cineytv: 'Cine y TV',
+            curiosidades: 'Curiosidades',
+            deportes: 'Deportes',
+            festividades: 'Festividades',
+            tecnologia: 'Tecnología',
+            videojuegos: 'Videojuegos',
+            general: 'General'
+        };
+
+        const eventsContainer = document.getElementById('eventos');
+        const resultsCount = document.getElementById('resultsCount');
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchButton = document.getElementById('clearSearch');
+        const filterButtons = [...document.querySelectorAll('.filter-button')];
         let allEvents = [];
         let activeCategory = 'todos';
+        let isInitialLoading = true;
 
-        const formatDate = (date) => new Intl.DateTimeFormat('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(date);
+        const normalizeSearchText = (value = '') => value
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLocaleLowerCase('es');
 
-        const calculateDaysRemaining = (eventDate) => {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            const eventDay = new Date(eventDate);
-            eventDay.setHours(0, 0, 0, 0);
-            const diffDays = Math.ceil((eventDay - today) / (1000 * 60 * 60 * 24));
-            return diffDays > 0 ? `FALTAN ${diffDays} DÍAS` : 'HOY';
-        };
+        const normalizeCategory = (value = '') => normalizeSearchText(value)
+            .replace(/[^a-zA-Z0-9]/g, '')
+            .toLowerCase();
+
+        const getCategoryLabel = (value) => categoryLabels[normalizeCategory(value)] || value || 'General';
 
         const getToday = () => {
             const today = new Date();
@@ -84,40 +152,57 @@
         };
 
         const parseEventDate = (dateString) => {
-            const eventDate = new Date(dateString);
-            const userTimezoneOffset = eventDate.getTimezoneOffset() * 60000;
-            return new Date(eventDate.getTime() + userTimezoneOffset);
+            const dateParts = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateString || '');
+            if (dateParts) return new Date(Number(dateParts[1]), Number(dateParts[2]) - 1, Number(dateParts[3]));
+            return new Date(dateString);
         };
 
-        const mapAirtableRecordToEvent = (record) => {
-            const fields = record.fields || {};
-            const eventDateStr = fields.FechaOrden;
-            if (!eventDateStr) return null;
+        const formatDate = (date) => new Intl.DateTimeFormat('es-ES', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+        }).format(date).replace('.', '').toUpperCase();
 
-            const eventDate = parseEventDate(eventDateStr);
-            if (isNaN(eventDate.getTime())) return null;
+        const getDaysRemaining = (eventDate) => Math.round((eventDate - getToday()) / 86400000);
+
+        const formatCountdown = (eventDate) => {
+            const days = getDaysRemaining(eventDate);
+            if (days < 0) return 'Pasado';
+            if (days === 0) return 'Hoy';
+            if (days === 1) return 'Mañana';
+            return `En ${days} días`;
+        };
+
+        const mapEventRecordToEvent = (record) => {
+            const fields = record.fields || {};
+            const eventDate = parseEventDate(fields.FechaOrden);
+            if (!record.id || !fields.FechaOrden || Number.isNaN(eventDate.getTime())) return null;
 
             return {
                 id: record.id,
-                titulo: fields.Titulo || 'Sin Título',
+                titulo: fields.Titulo || 'Sin título',
                 eventDate,
                 descripcion: fields.Descripcion || '',
-                imagen: Array.isArray(fields.Imagen) && fields.Imagen.length > 0 ? fields.Imagen[0].url : placeholderimagen,
+                imagen: Array.isArray(fields.Imagen) && fields.Imagen[0]?.url ? fields.Imagen[0].url : PLACEHOLDER_IMAGE,
                 categoria: fields[CONFIG.CATEGORY_FIELD] || 'General',
+                franquicia: fields.Franquicia || '',
+                tipo: fields.Tipo || '',
+                fechaTexto: fields.FechaEstrenoTexto || '',
                 url: fields.IMDbURL || fields.URL || ''
             };
         };
 
         const normalizeEvents = (records) => records
-            .map(mapAirtableRecordToEvent)
-            .filter(event => event && event.eventDate >= getToday());
+            .map(mapEventRecordToEvent)
+            .filter((event) => event && event.eventDate >= getToday())
+            .sort((a, b) => a.eventDate - b.eventDate);
 
-        const serializeEvents = (events) => events.map(event => ({
+        const serializeEvents = (events) => events.map((event) => ({
             ...event,
             eventDate: event.eventDate.toISOString()
         }));
 
-        const restoreEvents = (events) => events.map(event => ({
+        const restoreEvents = (events) => events.map((event) => ({
             ...event,
             eventDate: new Date(event.eventDate)
         }));
@@ -126,12 +211,10 @@
             try {
                 const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
                 if (!cached || !cached.timestamp || !Array.isArray(cached.events)) return null;
-                if (Date.now() - cached.timestamp > CACHE_TTL_MS) return null;
-
+                // Keep the last-good agenda even if a network refresh fails later.
                 return restoreEvents(cached.events)
-                    .filter(event => !isNaN(event.eventDate.getTime()) && event.eventDate >= getToday());
-            } catch (error) {
-                localStorage.removeItem(CACHE_KEY);
+                    .filter((event) => !Number.isNaN(event.eventDate.getTime()) && event.eventDate >= getToday());
+            } catch {
                 return null;
             }
         };
@@ -142,140 +225,307 @@
                     timestamp: Date.now(),
                     events: serializeEvents(events)
                 }));
-            } catch (error) {
-                // Si el navegador bloquea localStorage, la página sigue funcionando sin caché.
+            } catch {
+                // La agenda sigue funcionando aunque el navegador bloquee el almacenamiento local.
             }
         };
 
-        const displayEvents = (events) => {
-            eventsContainer.innerHTML = '';
-            const resultsCount = document.getElementById('resultsCount');
-            resultsCount.textContent = events.length === 1 ? '1 evento encontrado' : `${events.length} eventos encontrados`;
-            if (events.length === 0) {
-                eventsContainer.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1 / -1; margin-top:2rem;">No se encontraron eventos próximos.</p>';
-                return;
+        const createSvgIcon = (path, viewBox = '0 0 24 24') => {
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', viewBox);
+            svg.setAttribute('aria-hidden', 'true');
+            svg.innerHTML = path;
+            return svg;
+        };
+
+        const createEventCard = (event) => {
+            const card = document.createElement('article');
+            card.className = 'event-card';
+
+            const imageFrame = event.url ? document.createElement('a') : document.createElement('div');
+            imageFrame.className = 'image-frame';
+            if (event.url) {
+                imageFrame.href = event.url;
+                imageFrame.target = '_blank';
+                imageFrame.rel = 'noopener noreferrer';
+                imageFrame.setAttribute('aria-label', `Abrir ${event.titulo}`);
             }
 
-            events.forEach(({ titulo, eventDate, descripcion, imagen, url }) => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                const imageHtml = url && url.trim() !== ''
-                    ? `<a href="${url}" target="_blank" rel="noopener noreferrer"><img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy" decoding="async"></a>`
-                    : `<img src="${imagen}" class="event-image" alt="${titulo}" loading="lazy" decoding="async">`;
-
-                card.innerHTML = `
-                ${imageHtml}
-                <div class="card-body">
-                    <h2 class="titulo">${titulo}</h2>
-                    <p class="fecha">${formatDate(eventDate)}</p>
-                    <div class="faltan-container">
-                        <div class="faltan">${calculateDaysRemaining(eventDate)}</div>
-                        <button class="calendar-btn" onclick="downloadICS('${titulo.replace(/'/g, "\\'")}', '${eventDate.toISOString()}', '${(descripcion || '').replace(/'/g, "\\'")}')">
-                            <i class="fas fa-calendar-alt"></i>
-                        </button>
-                    </div>
-                </div>`;
-                eventsContainer.appendChild(card);
+            const image = document.createElement('img');
+            image.className = 'event-image';
+            image.src = event.imagen;
+            image.alt = event.titulo;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            image.addEventListener('error', () => {
+                if (!image.src.endsWith(PLACEHOLDER_IMAGE)) image.src = PLACEHOLDER_IMAGE;
             });
+            imageFrame.append(image);
+
+            const body = document.createElement('div');
+            body.className = 'event-card-body';
+
+            const meta = document.createElement('div');
+            meta.className = 'event-meta';
+            const date = document.createElement('time');
+            date.dateTime = [
+                event.eventDate.getFullYear(),
+                String(event.eventDate.getMonth() + 1).padStart(2, '0'),
+                String(event.eventDate.getDate()).padStart(2, '0')
+            ].join('-');
+            date.textContent = formatDate(event.eventDate);
+            const category = document.createElement('span');
+            category.textContent = getCategoryLabel(event.categoria);
+            meta.append(date, category);
+
+            const title = document.createElement('h3');
+            if (event.url) {
+                const titleLink = document.createElement('a');
+                titleLink.href = event.url;
+                titleLink.target = '_blank';
+                titleLink.rel = 'noopener noreferrer';
+                titleLink.textContent = event.titulo;
+                title.append(titleLink);
+            } else {
+                title.textContent = event.titulo;
+            }
+
+            const description = document.createElement('p');
+            description.className = 'event-description';
+            description.textContent = event.descripcion;
+            if (!event.descripcion) description.hidden = true;
+
+            const actions = document.createElement('div');
+            actions.className = 'event-actions';
+            const countdown = document.createElement('span');
+            countdown.className = getDaysRemaining(event.eventDate) === 0 ? 'countdown is-today' : 'countdown';
+            countdown.textContent = formatCountdown(event.eventDate);
+
+            const calendarButton = document.createElement('button');
+            calendarButton.className = 'calendar-button';
+            calendarButton.type = 'button';
+            calendarButton.setAttribute('aria-label', `Añadir ${event.titulo} al calendario`);
+            calendarButton.append(
+                createSvgIcon('<path d="M7 3v3m10-3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm6 7v5m-2.5-2.5h5"/>'),
+                Object.assign(document.createElement('span'), { textContent: 'Añadir' })
+            );
+            calendarButton.addEventListener('click', () => downloadICS(event));
+
+            actions.append(countdown, calendarButton);
+            body.append(meta, title, description, actions);
+            card.append(imageFrame, body);
+            return card;
         };
 
         const getVisibleEvents = () => {
-            const searchString = document.getElementById('searchInput').value.toLowerCase().trim();
-            return allEvents.filter(event => {
-                const matchesCategory = activeCategory === 'todos' || (event.categoria && event.categoria.toLowerCase() === activeCategory.toLowerCase());
-                const matchesSearch = !searchString
-                    || (event.titulo ? event.titulo.toLowerCase().includes(searchString) : false)
-                    || (event.descripcion ? event.descripcion.toLowerCase().includes(searchString) : false);
-                return matchesCategory && matchesSearch;
+            const searchString = normalizeSearchText(searchInput.value).trim();
+            return allEvents.filter((event) => {
+                const category = normalizeCategory(event.categoria);
+                const matchesCategory = activeCategory === 'todos' || category === activeCategory;
+                const haystack = normalizeSearchText(`${event.titulo} ${event.descripcion} ${event.franquicia} ${event.tipo}`);
+                const isUpcoming = event.eventDate >= getToday();
+                return isUpcoming && matchesCategory && (!searchString || haystack.includes(searchString));
             });
         };
 
-        const renderCurrentEvents = () => displayEvents(getVisibleEvents());
+        const renderEmptyState = () => {
+            const emptyState = document.createElement('div');
+            emptyState.className = 'empty-state';
+            const icon = createSvgIcon('<path d="M7 3v3m10-3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/>');
+            const title = document.createElement('h3');
+            title.textContent = 'No hay eventos por aquí';
+            const copy = document.createElement('p');
+            copy.textContent = 'Prueba otra búsqueda o vuelve a ver todas las categorías.';
+            const reset = document.createElement('button');
+            reset.type = 'button';
+            reset.textContent = 'Limpiar filtros';
+            reset.addEventListener('click', resetFilters);
+            emptyState.append(icon, title, copy, reset);
+            eventsContainer.append(emptyState);
+        };
 
-        const fetchAirtableEvents = async () => {
+        const renderEvents = () => {
+            if (isInitialLoading && allEvents.length === 0) return;
+            const events = getVisibleEvents();
+            eventsContainer.replaceChildren();
+            eventsContainer.setAttribute('aria-busy', 'false');
+            resultsCount.textContent = events.length === 1 ? '1 evento' : `${events.length} eventos`;
+            if (!events.length) {
+                renderEmptyState();
+                return;
+            }
+            const fragment = document.createDocumentFragment();
+            events.forEach((event) => fragment.append(createEventCard(event)));
+            eventsContainer.append(fragment);
+        };
+
+        const setActiveCategory = (category) => {
+            activeCategory = category;
+            filterButtons.forEach((button) => {
+                const isActive = button.dataset.category === category;
+                button.classList.toggle('active', isActive);
+                button.setAttribute('aria-pressed', String(isActive));
+            });
+            renderEvents();
+        };
+
+        const resetFilters = () => {
+            searchInput.value = '';
+            clearSearchButton.hidden = true;
+            setActiveCategory('todos');
+            searchInput.focus({ preventScroll: true });
+        };
+
+        const clearSearch = () => {
+            searchInput.value = '';
+            clearSearchButton.hidden = true;
+            renderEvents();
+            searchInput.focus({ preventScroll: true });
+        };
+
+        const renderError = () => {
+            eventsContainer.replaceChildren();
+            eventsContainer.setAttribute('aria-busy', 'false');
+            resultsCount.textContent = 'Agenda no disponible';
+            const errorState = document.createElement('div');
+            errorState.className = 'empty-state error-state';
+            const title = document.createElement('h3');
+            title.textContent = 'No hemos podido cargar la agenda';
+            const copy = document.createElement('p');
+            copy.textContent = 'Puede ser algo temporal. Vuelve a intentarlo en un momento.';
+            const retry = document.createElement('button');
+            retry.type = 'button';
+            retry.textContent = 'Reintentar';
+            retry.addEventListener('click', fetchEvents);
+            errorState.append(title, copy, retry);
+            eventsContainer.append(errorState);
+        };
+
+        async function fetchEvents() {
             const cachedEvents = readCachedEvents();
-            if (cachedEvents && cachedEvents.length > 0) {
+            if (cachedEvents?.length) {
+                isInitialLoading = false;
                 allEvents = cachedEvents;
-                renderCurrentEvents();
+                renderEvents();
             } else {
-                eventsContainer.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1 / -1; margin-top:2rem;">Cargando eventos...</p>';
+                isInitialLoading = true;
+                eventsContainer.setAttribute('aria-busy', 'true');
+                resultsCount.textContent = 'Cargando agenda…';
             }
 
             try {
-                const response = await fetch(CONFIG.DATA_ENDPOINT, {
-                    headers: { Accept: 'application/json' }
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Error cargando eventos: ${response.status} ${response.statusText}`);
-                }
-
+                const response = await fetch(CONFIG.DATA_ENDPOINT, { headers: { Accept: 'application/json' } });
+                if (!response.ok) throw new Error(`Event request failed with status ${response.status}`);
                 const data = await response.json();
-                const records = Array.isArray(data.records) ? data.records : [];
-
-                allEvents = normalizeEvents(records);
+                isInitialLoading = false;
+                if (!Array.isArray(data.records)) throw new Error('Invalid event feed');
+                allEvents = normalizeEvents(data.records);
+                document.getElementById('agendaStatus').hidden = true;
                 cacheEvents(allEvents);
-                renderCurrentEvents();
+                renderEvents();
             } catch (error) {
                 console.error('Error al cargar eventos:', error);
-                if (!cachedEvents || cachedEvents.length === 0) {
-                    eventsContainer.innerHTML = `<p style="text-align:center; color: red; width:100%; grid-column: 1 / -1;">Error cargando eventos: ${error.message}</p>`;
+                if (cachedEvents?.length) {
+                    const status = document.getElementById('agendaStatus');
+                    status.hidden = false;
+                    status.textContent = 'Mostrando la última agenda guardada. No se ha podido comprobar si hay cambios.';
+                } else {
+                    isInitialLoading = false;
+                    renderError();
                 }
             }
+        }
+
+        const formatDateForICS = (date) => [
+            date.getFullYear(),
+            String(date.getMonth() + 1).padStart(2, '0'),
+            String(date.getDate()).padStart(2, '0')
+        ].join('');
+
+        const escapeICS = (value = '') => value
+            .replace(/\\/g, '\\\\')
+            .replace(/\r\n|\r|\n/g, '\\n')
+            .replace(/,/g, '\\,')
+            .replace(/;/g, '\\;');
+
+        const foldICSLine = (line) => {
+            const encoder = new TextEncoder();
+            const decoder = new TextDecoder();
+            const bytes = encoder.encode(line);
+            if (bytes.length <= 75) return line;
+
+            const chunks = [];
+            let offset = 0;
+            let limit = 75;
+            while (offset < bytes.length) {
+                let end = Math.min(offset + limit, bytes.length);
+                while (end < bytes.length && end > offset && (bytes[end] & 0xC0) === 0x80) end -= 1;
+                chunks.push(decoder.decode(bytes.slice(offset, end)));
+                offset = end;
+                limit = 74;
+            }
+            return chunks.join('\r\n ');
         };
 
-        function filterEvents(categoria) {
-            activeCategory = categoria;
-            const buttons = document.querySelectorAll('.botonesfiltro');
-            if (categoria === 'todos') {
-                buttons.forEach(button => {
-                    button.classList.remove('inactive');
-                    button.classList.toggle('active', button.dataset.category === 'todos');
-                    button.setAttribute('aria-pressed', button.dataset.category === 'todos' ? 'true' : 'false');
-                });
-            } else {
-                buttons.forEach(button => {
-                    button.classList.remove('active');
-                    button.classList.add('inactive');
-                    button.setAttribute('aria-pressed', 'false');
-                });
-                const activeButton = [...buttons].find(button => button.dataset.category === categoria);
-                if (activeButton) {
-                    activeButton.classList.add('active');
-                    activeButton.classList.remove('inactive');
-                    activeButton.setAttribute('aria-pressed', 'true');
-                }
-            }
-            renderCurrentEvents();
-        }
+        function downloadICS(event) {
+            const endDate = new Date(event.eventDate);
+            endDate.setDate(endDate.getDate() + 1);
+            const timestamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            const lines = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//AJRA//EVENTOS//ES',
+                'CALSCALE:GREGORIAN',
+                'METHOD:PUBLISH',
+                'BEGIN:VEVENT',
+                `UID:${escapeICS(event.id)}@eventos.ajra.es`,
+                `DTSTAMP:${timestamp}`,
+                `DTSTART;VALUE=DATE:${formatDateForICS(event.eventDate)}`,
+                `DTEND;VALUE=DATE:${formatDateForICS(endDate)}`,
+                `SUMMARY:${escapeICS(event.titulo)}`,
+                `DESCRIPTION:${escapeICS(event.descripcion || 'Evento guardado desde Eventos by AJRA')}`,
+                event.url ? `URL:${escapeICS(event.url)}` : '',
+                'STATUS:CONFIRMED',
+                'TRANSP:TRANSPARENT',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].filter(Boolean);
 
-        function searchEvents() {
-            renderCurrentEvents();
-        }
-
-        function downloadICS(titulo, fechaISO, descripcion) {
-            const eventDate = new Date(fechaISO);
-            const formatDateForICS = (date) => `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`;
-            const now = new Date();
-            const timestamp = now.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-            const cleanText = (text) => text.replace(/[^\w\s]/gi, '').replace(/\n/g, '\\n').replace(/,/g, '\\,');
-
-            const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//CULTURAFREAK//EVENTOS//ES\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:${timestamp}-culturafreak@ajra.es\nDTSTART;VALUE=DATE:${formatDateForICS(eventDate)}\nSUMMARY:${cleanText(titulo)}\nDESCRIPTION:${cleanText(descripcion || 'Evento de CULTURAFREAK')}\nORGANIZER;CN=CULTURAFREAK:MAILTO:eventos@ajra.es\nSTATUS:CONFIRMED\nTRANSP:TRANSPARENT\nEND:VEVENT\nEND:VCALENDAR`;
-
+            const icsContent = lines.map(foldICSLine).join('\r\n') + '\r\n';
             const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const objectUrl = URL.createObjectURL(blob);
             const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = `${cleanText(titulo)}.ics`;
-            document.body.appendChild(link);
+            link.href = objectUrl;
+            link.download = `${event.titulo.replace(/[\\/:*?"<>|]/g, '').trim() || 'evento'}.ics`;
+            document.body.append(link);
             link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(link.href);
+            link.remove();
+            window.setTimeout(() => URL.revokeObjectURL(objectUrl), 0);
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            fetchAirtableEvents();
-            document.getElementById('searchInput').addEventListener('input', searchEvents);
+        filterButtons.forEach((button) => button.addEventListener('click', () => setActiveCategory(button.dataset.category)));
+        searchInput.addEventListener('input', () => {
+            clearSearchButton.hidden = !searchInput.value;
+            renderEvents();
         });
+        searchInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && searchInput.value) clearSearch();
+        });
+        clearSearchButton.addEventListener('click', clearSearch);
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        fetchEvents();
+        window.setInterval(() => { if (!document.hidden) fetchEvents(); }, 60000);
+        document.addEventListener('visibilitychange', () => { if (!document.hidden) fetchEvents(); });
+
+        const scheduleMidnightRefresh = () => {
+            const nextDay = new Date();
+            nextDay.setHours(24, 0, 1, 0);
+            window.setTimeout(() => {
+                fetchEvents();
+                scheduleMidnightRefresh();
+            }, nextDay - new Date());
+        };
+        scheduleMidnightRefresh();
     </script>
 </body>
 

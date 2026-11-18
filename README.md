@@ -1,28 +1,31 @@
-# Eventos AJRA
+# EVENTOS by AJRA
 
-[eventos.ajra.es](https://eventos.ajra.es) es la agenda de AJRA para tener a mano las fechas que más interesan: cine, series, videojuegos, tecnología, deporte, festividades y cultura geek.
+Web pública: https://eventos.ajra.es
 
-La idea es sencilla: reunir en un mismo lugar estrenos, lanzamientos, convenciones y otros eventos relevantes para no perderlos de vista.
+Sitio estático servido por GitHub Pages desde este repositorio.
 
-## Qué puedes encontrar
+## Cómo funciona
 
-- Fechas de estreno de películas y series.
-- Lanzamientos de videojuegos y novedades de tecnología o entretenimiento.
-- Convenciones, ferias, festividades y otros eventos especiales.
-- Citas deportivas y curiosidades para marcar en el calendario.
-- Filtros por categoría y un buscador para localizar rápidamente lo que te interesa.
-- La opción de añadir cada cita a tu calendario.
+- **Fuente de datos:** la base «EVENTOS» de Airtable (tabla `eventos`).
+  Airtable es el máster: ahí se crean, editan y borran los eventos
+  (la automatización «EVENTOS - Limpiar pasados» borra cada noche los
+  eventos con más de 7 días).
+- **Sincronización:** la GitHub Action `eventos-sync`
+  (`.github/workflows/eventos-sync.yml`) se ejecuta cada 30 minutos y
+  bajo demanda. Ejecuta `scripts/export-airtable-events.mjs`, que lee
+  Airtable con el token guardado en los secretos del repo
+  (`AIRTABLE_TOKEN`), genera `api/events.json` con el contrato
+  `{ records, meta }` y descarga a `images/events/` las imágenes que
+  falten, convertidas a webp. Si hay cambios, los commitea.
+- **Front:** `index.html` + `css/eventos.css`, sin build. Lee
+  `api/events.json` y filtra en el navegador.
+- **Seguridad:** ningún secreto vive en el código. El script falla
+  cerrado: si la lectura de Airtable es incompleta o el número de
+  eventos cae más de un 20%, no publica nada.
 
-## Visita la agenda
+## Historia
 
-La agenda está disponible en [eventos.ajra.es](https://eventos.ajra.es).
-
-## Sobre el proyecto
-
-EVENTOS es un proyecto de AJRA pensado como una referencia rápida, visual y fácil de consultar. La información se actualiza para que la agenda siga siendo útil, aunque las fechas y los detalles de cada evento pueden cambiar.
-
-Si quieres colaborar o proponer una cita para la agenda, puedes abrir una incidencia en este repositorio.
-
-## Para actualizar la web
-
-La página se publica automáticamente desde este repositorio. Antes de dar por bueno un cambio, conviene comprobar que los eventos, los filtros, el buscador y la descarga de calendario funcionan correctamente tanto en móvil como en escritorio.
+Hasta noviembre de 2026 el sitio vivía en OpenAI Sites (Worker + D1
+alimentado por un Apps Script desde Google Sheets). El 18-nov-2026 se
+recreó como sitio estático en este repositorio, con Airtable como
+fuente única.

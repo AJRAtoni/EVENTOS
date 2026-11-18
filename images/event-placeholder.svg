@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" role="img" aria-labelledby="title description">
+  <title id="title">Coming Soon</title>
+  <desc id="description">Imagen temporal para un evento sin portada</desc>
+  <rect width="800" height="1200" fill="#027AFF"/>
+  <text x="400" y="600" fill="#FFFFFF" font-family="Avenir Next Condensed, Avenir Next, Arial, sans-serif" font-size="74" font-weight="700" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">Coming Soon</text>
+</svg>

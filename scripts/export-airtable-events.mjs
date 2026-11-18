@@ -1,223 +1,176 @@
-import crypto from 'node:crypto';
-import fs from 'node:fs/promises';
+#!/usr/bin/env node
+/**
+ * EVENTOS by AJRA — Generador del feed público desde Airtable.
+ *
+ * Se ejecuta en GitHub Actions (ver .github/workflows/eventos-sync.yml):
+ * lee la base de Airtable con AIRTABLE_TOKEN (secreto del repo, nunca en el
+ * código), valida los registros, descarga las imágenes que falten a
+ * images/events/<attachmentId>.webp y escribe api/events.json con el mismo
+ * contrato que servía el antiguo Worker: { records, meta }.
+ *
+ * Falla cerrado: si la lectura es incompleta o el número de eventos cae más
+ * de un 20% respecto al feed publicado, sale con error y no escribe nada.
+ */
+import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const AIRTABLE_BASE_ID = 'apphXPfmF1OwvCPWC';
-const AIRTABLE_TABLE_NAME = 'eventos';
-const AIRTABLE_SORT_FIELD = 'FechaOrden';
-const OUTPUT_PATH = 'data/events.json';
-const PLACEHOLDER_IMAGE = 'images/logo.webp';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const BASE_ID = process.env.AIRTABLE_BASE_ID || 'apphXPfmF1OwvCPWC';
+const TABLE = process.env.AIRTABLE_TABLE || 'eventos';
+const TOKEN = process.env.AIRTABLE_TOKEN;
+const SITE_ORIGIN = 'https://eventos.ajra.es';
+const OUT_JSON = path.join(ROOT, 'api', 'events.json');
+const IMG_DIR = path.join(ROOT, 'images', 'events');
+const MAX_DROP_RATIO = 0.2;
 
-const {
-    AIRTABLE_TOKEN,
-    CLOUDINARY_URL
-} = process.env;
-
-const parseCloudinaryUrl = (url) => {
-    if (!url) return {};
-
-    try {
-        const parsed = new URL(url);
-
-        return {
-            CLOUDINARY_CLOUD_NAME: parsed.hostname,
-            CLOUDINARY_API_KEY: decodeURIComponent(parsed.username),
-            CLOUDINARY_API_SECRET: decodeURIComponent(parsed.password)
-        };
-    } catch (error) {
-        throw new Error('CLOUDINARY_URL must use cloudinary://<api_key>:<api_secret>@<cloud_name>');
-    }
-};
-
-const cloudinaryUrlConfig = parseCloudinaryUrl(CLOUDINARY_URL);
-const cloudinaryConfig = {
-    CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME || cloudinaryUrlConfig.CLOUDINARY_CLOUD_NAME,
-    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY || cloudinaryUrlConfig.CLOUDINARY_API_KEY,
-    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET || cloudinaryUrlConfig.CLOUDINARY_API_SECRET
-};
-
-const {
-    CLOUDINARY_CLOUD_NAME,
-    CLOUDINARY_API_KEY,
-    CLOUDINARY_API_SECRET
-} = cloudinaryConfig;
-
-const uploadImages = Boolean(CLOUDINARY_CLOUD_NAME && CLOUDINARY_API_KEY && CLOUDINARY_API_SECRET);
-
-const requiredEnv = ['AIRTABLE_TOKEN'];
-const missingEnv = requiredEnv.filter((name) => !process.env[name]);
-
-if (missingEnv.length > 0) {
-    console.error(`Missing required env var(s): ${missingEnv.join(', ')}`);
-    process.exit(1);
+if (!TOKEN) {
+  console.error('Falta la variable de entorno AIRTABLE_TOKEN.');
+  process.exit(1);
 }
 
-if (!uploadImages) {
-    console.warn('Cloudinary env vars not found. Exporting events with placeholder images.');
-}
-
-const clean = (value = '') => String(value || '').replace(/\s+/g, ' ').trim();
-
-const stripAccents = (value = '') => clean(value)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
-
-const slugify = (value = '') => stripAccents(value)
-    .toLowerCase()
-    .replace(/&/g, ' y ')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-
-const categoryMap = {
-    cineytv: 'cineytv',
-    deportes: 'deportes',
-    festividades: 'festividades',
-    tecnologia: 'tecnologia',
-    videojuegos: 'videojuegos',
-    curiosidades: 'curiosidades'
-};
-
-const normalizeCategory = (value) => categoryMap[slugify(value)] || 'curiosidades';
-
-const usedIds = new Map();
-
-const makeId = (date, title) => {
-    const base = `evt-${date}-${slugify(title) || 'sin-titulo'}`;
-    const seen = usedIds.get(base) || 0;
-    usedIds.set(base, seen + 1);
-    return seen === 0 ? base : `${base}-${seen + 1}`;
-};
-
-const signCloudinaryParams = (params) => {
-    const signaturePayload = Object.entries(params)
-        .filter(([key, value]) => value !== undefined && value !== null && value !== '' && !['file', 'api_key', 'resource_type', 'cloud_name'].includes(key))
-        .sort(([a], [b]) => a.localeCompare(b))
-        .map(([key, value]) => `${key}=${value}`)
-        .join('&');
-
-    return crypto
-        .createHash('sha1')
-        .update(`${signaturePayload}${CLOUDINARY_API_SECRET}`)
-        .digest('hex');
-};
-
-const fetchJson = async (url, options = {}) => {
-    const response = await fetch(url, options);
-
-    if (!response.ok) {
-        const body = await response.text();
-        throw new Error(`${response.status} ${response.statusText}: ${body}`);
-    }
-
-    return response.json();
-};
-
-const fetchAirtableRecords = async () => {
-    const records = [];
-    let offset = '';
-
-    do {
-        const url = new URL(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`);
-        url.searchParams.set('pageSize', '100');
-        url.searchParams.set('sort[0][field]', AIRTABLE_SORT_FIELD);
-        url.searchParams.set('sort[0][direction]', 'asc');
-        if (offset) url.searchParams.set('offset', offset);
-
-        const data = await fetchJson(url, {
-            headers: {
-                Authorization: `Bearer ${AIRTABLE_TOKEN}`
-            }
-        });
-
-        records.push(...(data.records || []));
-        offset = data.offset || '';
-    } while (offset);
-
-    return records;
-};
-
-const uploadToCloudinary = async ({ eventId, attachment }) => {
-    if (!uploadImages || !attachment?.url) return PLACEHOLDER_IMAGE;
-
-    const timestamp = Math.floor(Date.now() / 1000);
-    const publicId = `eventos/${eventId}`;
-    const params = {
-        timestamp,
-        public_id: publicId,
-        overwrite: 'true',
-        invalidate: 'true'
-    };
-    const signature = signCloudinaryParams(params);
-    const form = new FormData();
-
-    form.set('file', attachment.url);
-    form.set('api_key', CLOUDINARY_API_KEY);
-    form.set('timestamp', String(timestamp));
-    form.set('public_id', publicId);
-    form.set('overwrite', 'true');
-    form.set('invalidate', 'true');
-    form.set('signature', signature);
-
-    const data = await fetchJson(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
-        method: 'POST',
-        body: form
+async function fetchAllRecords() {
+  const records = [];
+  let offset;
+  do {
+    const url = new URL(
+      `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE)}`
+    );
+    url.searchParams.set('pageSize', '100');
+    url.searchParams.set('sort[0][field]', 'FechaOrden');
+    url.searchParams.set('sort[0][direction]', 'asc');
+    if (offset) url.searchParams.set('offset', offset);
+    const res = await fetch(url, {
+      headers: { Authorization: `Bearer ${TOKEN}` },
     });
-
-    return data.secure_url || PLACEHOLDER_IMAGE;
-};
-
-const mapRecordToEvent = async (record) => {
-    const fields = record.fields || {};
-    const date = clean(fields.FechaOrden || '');
-    const title = clean(fields.Titulo || 'Sin Titulo');
-
-    if (!date) return null;
-
-    const id = makeId(date, title);
-    const brand = slugify(fields.Franquicia || '');
-    const sites = ['eventos'];
-    const firstImage = Array.isArray(fields.Imagen) ? fields.Imagen[0] : null;
-
-    if (brand === 'marvel') sites.push('marvel');
-    if (brand === 'dc') sites.push('dc');
-
-    const tags = [fields.Tipo, fields.Franquicia, fields.CategoriaEvento]
-        .map(slugify)
-        .filter(Boolean);
-
-    return {
-        id,
-        title,
-        description: '',
-        date,
-        category: normalizeCategory(fields.CategoriaEvento || ''),
-        image: await uploadToCloudinary({ eventId: id, attachment: firstImage }),
-        url: clean(fields.IMDbURL || fields.URL || ''),
-        status: 'published',
-        sites,
-        brands: brand ? [brand] : [],
-        tags: [...new Set(tags)]
-    };
-};
-
-const records = await fetchAirtableRecords();
-const events = [];
-
-for (const record of records) {
-    const event = await mapRecordToEvent(record);
-    if (event) events.push(event);
+    if (!res.ok) {
+      throw new Error(`Airtable respondió ${res.status}: ${await res.text()}`);
+    }
+    const data = await res.json();
+    if (!Array.isArray(data.records)) {
+      throw new Error('Respuesta de Airtable sin lista de registros.');
+    }
+    records.push(...data.records);
+    offset = data.offset;
+  } while (offset);
+  return records;
 }
 
-events.sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title, 'es'));
+function cleanText(value) {
+  return typeof value === 'string' && value.trim() ? value.trim() : undefined;
+}
 
-const output = {
-    version: 1,
-    updatedAt: new Date().toISOString(),
-    source: uploadImages ? 'airtable-export-cloudinary-images' : 'airtable-export',
-    events
-};
+async function ensureImage(attachment) {
+  const file = path.join(IMG_DIR, `${attachment.id}.webp`);
+  if (existsSync(file)) return;
+  const res = await fetch(attachment.url);
+  if (!res.ok) {
+    throw new Error(
+      `No se pudo descargar la imagen ${attachment.id} (${res.status}).`
+    );
+  }
+  const buffer = Buffer.from(await res.arrayBuffer());
+  let webp;
+  try {
+    const sharp = (await import('sharp')).default;
+    webp = await sharp(buffer).webp({ quality: 82 }).toBuffer();
+  } catch {
+    // Sin sharp disponible se guarda el original solo si ya es webp.
+    if (attachment.type === 'image/webp') {
+      webp = buffer;
+    } else {
+      throw new Error(
+        'sharp no está disponible y la imagen no es webp: ' + attachment.id
+      );
+    }
+  }
+  await writeFile(file, webp);
+  console.log(`Imagen nueva: images/events/${attachment.id}.webp`);
+}
 
-await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`);
+async function main() {
+  const raw = await fetchAllRecords();
+  const records = [];
+  await mkdir(IMG_DIR, { recursive: true });
 
-const withCloudinaryImages = events.filter((event) => event.image.includes('res.cloudinary.com')).length;
-console.log(`Exported ${events.length} events to ${OUTPUT_PATH}.`);
-console.log(`Cloudinary images: ${withCloudinaryImages}/${events.length}.`);
+  for (const rec of raw) {
+    const f = rec.fields || {};
+    const titulo = cleanText(f.Titulo);
+    const fecha = cleanText(f.FechaOrden);
+    // Sin título o sin fecha no se publica (igual que en el sistema anterior).
+    if (!titulo || !fecha) continue;
+
+    const fields = { Titulo: titulo, FechaOrden: fecha };
+    const texto = cleanText(f.FechaEstrenoTexto);
+    if (texto) fields.FechaEstrenoTexto = texto;
+    const categoria = cleanText(f.CategoriaEvento);
+    if (categoria) fields.CategoriaEvento = categoria;
+    const tipo = cleanText(f.Tipo);
+    if (tipo) fields.Tipo = tipo;
+    const franquicia = cleanText(f.Franquicia);
+    if (franquicia) fields.Franquicia = franquicia;
+    const imdb = cleanText(f.IMDbURL);
+    if (imdb) fields.IMDbURL = imdb;
+
+    const attachments = Array.isArray(f.Imagen) ? f.Imagen : [];
+    if (attachments.length > 0) {
+      const att = attachments[0];
+      await ensureImage(att);
+      fields.Imagen = [
+        { url: `${SITE_ORIGIN}/images/events/${att.id}.webp` },
+      ];
+    }
+    records.push({ id: rec.id, fields });
+  }
+
+  if (records.length === 0) {
+    console.error('La lectura devolvió 0 eventos publicables. No se escribe.');
+    process.exit(1);
+  }
+
+  // Guarda contra borrados masivos accidentales (>20% de caída).
+  if (existsSync(OUT_JSON)) {
+    try {
+      const prev = JSON.parse(await readFile(OUT_JSON, 'utf8'));
+      const prevCount = Array.isArray(prev.records) ? prev.records.length : 0;
+      if (
+        prevCount > 0 &&
+        prev.meta &&
+        prev.meta.source === 'airtable' &&
+        records.length < prevCount * (1 - MAX_DROP_RATIO)
+      ) {
+        console.error(
+          `Caída sospechosa: de ${prevCount} a ${records.length} eventos. No se escribe.`
+        );
+        process.exit(1);
+      }
+    } catch {
+      // Si el feed anterior no se puede leer, se sigue con el nuevo.
+    }
+  }
+
+  const now = new Date().toISOString();
+  const revision = createHash('sha256')
+    .update(JSON.stringify(records))
+    .digest('hex');
+  const feed = {
+    records,
+    meta: {
+      source: 'airtable',
+      publishedAt: now,
+      revision,
+      syncedAt: now,
+      stale: false,
+    },
+  };
+  await mkdir(path.dirname(OUT_JSON), { recursive: true });
+  await writeFile(OUT_JSON, JSON.stringify(feed, null, 2) + '\n');
+  console.log(`Feed generado: ${records.length} eventos desde Airtable.`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
