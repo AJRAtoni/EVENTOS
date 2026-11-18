@@ -1,0 +1,46 @@
+name: eventos-sync
+
+# Genera api/events.json desde Airtable y descarga las imágenes nuevas.
+# El token vive en los secretos del repo (AIRTABLE_TOKEN), nunca en el código.
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eventos-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instalar sharp (conversión de imágenes a webp)
+        run: npm install --no-save sharp
+
+      - name: Generar el feed desde Airtable
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+        run: node scripts/export-airtable-events.mjs
+
+      - name: Publicar los cambios si los hay
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name 'eventos-sync'
+            git config user.email 'actions@github.com'
+            git add api/events.json images/events
+            git commit -m 'sync: actualizar eventos desde Airtable'
+            git push
+          else
+            echo 'Sin cambios.'
+          fi
