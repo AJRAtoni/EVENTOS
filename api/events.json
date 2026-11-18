@@ -1,234 +1,6 @@
 {
   "records": [
     {
-      "id": "recmKsoGun8kuS5nc",
-      "fields": {
-        "Titulo": "Nintendo Switch Sports Resort",
-        "FechaOrden": "2026-10-22",
-        "FechaEstrenoTexto": "22 DE OCTUBRE DE 2026 (EE. UU.) · NINTENDO SWITCH 2",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://www.nintendo.com/us/whatsnew/nintendo-direct-reveals-metroid-ravenous-kirby-and-the-world-beyond-and-more-games-for-nintendo-switch-2-and-nintendo-switch/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attOMuLyxcPgrcwvs.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "reccVtw7OKIKxf3uM",
-      "fields": {
-        "Titulo": "iPhone Duo - Available",
-        "FechaOrden": "2026-10-23",
-        "CategoriaEvento": "TECNOLOGIA",
-        "IMDbURL": "https://www.apple.com/iphone-duo/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attSYE6woHC1xuvkE.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "recGi10FZft2iUIjR",
-      "fields": {
-        "Titulo": "Clayface",
-        "FechaOrden": "2026-10-23",
-        "CategoriaEvento": "CINEYTV",
-        "Tipo": "PELICULA",
-        "Franquicia": "DC",
-        "IMDbURL": "https://boxd.it/RTVm",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attEbtjuZniYXDDY4.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "reckpR2bm8sSY6o8N",
-      "fields": {
-        "Titulo": "Gran Premio de Estados Unidos (Austin) 2026",
-        "FechaOrden": "2026-10-25",
-        "CategoriaEvento": "DEPORTES",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attcN8jhlfbX9bUy6.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "recJj1hAWe4iaxv2v",
-      "fields": {
-        "Titulo": "Minecraft en Switch 2",
-        "FechaOrden": "2026-10-27",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attVJQAEDO8TwyGYL.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "recKVIPNHumF5vRfy",
-      "fields": {
-        "Titulo": "No Man's Sky para iOS & iPad",
-        "FechaOrden": "2026-10-28",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://x.com/NoMansSky/status/2109645679651885469",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/att0ypVeQIOr0D4z1.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "recjlnVoMPp9m8ZmA",
-      "fields": {
-        "Titulo": "Gran Premio de México 2026",
-        "FechaOrden": "2026-11-01",
-        "CategoriaEvento": "DEPORTES",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attLBwxaTHQH2j4nF.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "rec1svTgxKR52SHru",
-      "fields": {
-        "Titulo": "Marvel’s Guardians of the Galaxy: Encore Edition",
-        "FechaOrden": "2026-11-05",
-        "FechaEstrenoTexto": "5 DE NOVIEMBRE DE 2026 (EE. UU.) · NINTENDO SWITCH 2",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://www.nintendo.com/us/whatsnew/nintendo-direct-reveals-metroid-ravenous-kirby-and-the-world-beyond-and-more-games-for-nintendo-switch-2-and-nintendo-switch/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attYsX7hY7lwIowE1.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "rec8Vm6wbxVXdsRMm",
-      "fields": {
-        "Titulo": "The Legend of Zelda: Ocarina of Time (remake — Nintendo Switch 2)",
-        "FechaOrden": "2026-11-05",
-        "FechaEstrenoTexto": "5 de noviembre de 2026",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://www.nintendo.com/us/store/products/the-legend-of-zelda-ocarina-of-time-switch-2/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/atti8i9sfK3iR0wwV.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "recG43C98d6TzJZgx",
-      "fields": {
-        "Titulo": "Stellar Blade Complete Edition",
-        "FechaOrden": "2026-11-05",
-        "FechaEstrenoTexto": "5 DE NOVIEMBRE DE 2026 (EE. UU.) · NINTENDO SWITCH 2",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://www.nintendo.com/us/whatsnew/nintendo-direct-reveals-metroid-ravenous-kirby-and-the-world-beyond-and-more-games-for-nintendo-switch-2-and-nintendo-switch/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attPw5nVIqZ6ThIbC.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "recd4PYo3RF9BixPf",
-      "fields": {
-        "Titulo": "Godzilla Minus Zero",
-        "FechaOrden": "2026-11-06",
-        "FechaEstrenoTexto": "6 DE NOVIEMBRE DE 2026",
-        "CategoriaEvento": "CINEYTV",
-        "Tipo": "PELICULA",
-        "IMDbURL": "https://boxd.it/R9dS",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attc2i5avmydnnDGX.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "rec69FY7vAaZcGeA9",
-      "fields": {
-        "Titulo": "Gran Premio de Brasil 2026",
-        "FechaOrden": "2026-11-08",
-        "CategoriaEvento": "DEPORTES",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attbsHpzBNB8SPtgP.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "rectBwsvQZZGq4sYP",
-      "fields": {
-        "Titulo": "Metaphor ReFantazio",
-        "FechaOrden": "2026-11-12",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/att3lC4FxP6vMyQX2.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "rec4HkuqjW0TDhxFj",
-      "fields": {
-        "Titulo": "How to Rob a Bank",
-        "FechaOrden": "2026-11-13",
-        "CategoriaEvento": "CINEYTV",
-        "Tipo": "PELICULA",
-        "IMDbURL": "https://boxd.it/TbG2",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attQ9efnvwbFmTGcH.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "rec8QnZwOLyH2S5Tb",
-      "fields": {
-        "Titulo": "Return of the Living Dead",
-        "FechaOrden": "2026-11-13",
-        "CategoriaEvento": "CINEYTV",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attBXbGei0aAbDy2b.webp"
-          }
-        ]
-      }
-    },
-    {
-      "id": "recD9IIuR4dwTRQbE",
-      "fields": {
-        "Titulo": "I Play Rocky",
-        "FechaOrden": "2026-11-13",
-        "CategoriaEvento": "CINEYTV",
-        "Tipo": "PELICULA",
-        "IMDbURL": "https://boxd.it/N6is",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attso6ZKfpn53VpTc.webp"
-          }
-        ]
-      }
-    },
-    {
       "id": "recKdDcmmT6p3RMrP",
       "fields": {
         "Titulo": "Grand Theft Auto VI",
@@ -342,21 +114,6 @@
       }
     },
     {
-      "id": "rec37zbTamDlA9FwR",
-      "fields": {
-        "Titulo": "Professor Layton and the New World of Steam",
-        "FechaOrden": "2026-12-10",
-        "FechaEstrenoTexto": "10 DE DICIEMBRE DE 2026 (EE. UU.) · NINTENDO SWITCH 2 / NINTENDO SWITCH",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://www.layton.jp/jouki/en/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attzs26Z4FdcnO8kr.webp"
-          }
-        ]
-      }
-    },
-    {
       "id": "recuXAsQtFbBIkzCT",
       "fields": {
         "Titulo": "The Game Awards 2026",
@@ -367,6 +124,21 @@
         "Imagen": [
           {
             "url": "https://eventos.ajra.es/images/events/attT99x2v3Ek93hsO.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rec37zbTamDlA9FwR",
+      "fields": {
+        "Titulo": "Professor Layton and the New World of Steam",
+        "FechaOrden": "2026-12-10",
+        "FechaEstrenoTexto": "10 DE DICIEMBRE DE 2026 (EE. UU.) · NINTENDO SWITCH 2 / NINTENDO SWITCH",
+        "CategoriaEvento": "VIDEOJUEGOS",
+        "IMDbURL": "https://www.layton.jp/jouki/en/",
+        "Imagen": [
+          {
+            "url": "https://eventos.ajra.es/images/events/attzs26Z4FdcnO8kr.webp"
           }
         ]
       }
@@ -403,21 +175,6 @@
       }
     },
     {
-      "id": "recCFOWaFUpAtpxOX",
-      "fields": {
-        "Titulo": "Jumanji: Open World",
-        "FechaOrden": "2026-12-25",
-        "CategoriaEvento": "CINEYTV",
-        "Tipo": "PELICULA",
-        "IMDbURL": "https://boxd.it/M3cu",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/att0cqJ6aBBnrJBmW.webp"
-          }
-        ]
-      }
-    },
-    {
       "id": "recdLbq5NDzm69yRU",
       "fields": {
         "Titulo": "Werwulf",
@@ -442,6 +199,21 @@
         "Imagen": [
           {
             "url": "https://eventos.ajra.es/images/events/attkbih6nnBXt4Z3v.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "recCFOWaFUpAtpxOX",
+      "fields": {
+        "Titulo": "Jumanji: Open World",
+        "FechaOrden": "2026-12-25",
+        "CategoriaEvento": "CINEYTV",
+        "Tipo": "PELICULA",
+        "IMDbURL": "https://boxd.it/M3cu",
+        "Imagen": [
+          {
+            "url": "https://eventos.ajra.es/images/events/att0cqJ6aBBnrJBmW.webp"
           }
         ]
       }
@@ -491,23 +263,6 @@
       }
     },
     {
-      "id": "recvm4ypaumxhpPfM",
-      "fields": {
-        "Titulo": "Blue Beetle",
-        "FechaOrden": "2027-01-31",
-        "FechaEstrenoTexto": "PROXIMAMENTE",
-        "CategoriaEvento": "CINEYTV",
-        "Tipo": "SERIE",
-        "Franquicia": "DC",
-        "IMDbURL": "https://www.imdb.com/title/tt32621773/reference/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_blue%2520beetle%2520",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/att2lr4U0xH8vFjeO.webp"
-          }
-        ]
-      }
-    },
-    {
       "id": "recXlvvXKlk0ZyHe7",
       "fields": {
         "Titulo": "Creature Commandos: Temporada 2",
@@ -520,6 +275,23 @@
         "Imagen": [
           {
             "url": "https://eventos.ajra.es/images/events/attKNOoFaqWaQmBhc.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "recvm4ypaumxhpPfM",
+      "fields": {
+        "Titulo": "Blue Beetle",
+        "FechaOrden": "2027-01-31",
+        "FechaEstrenoTexto": "PROXIMAMENTE",
+        "CategoriaEvento": "CINEYTV",
+        "Tipo": "SERIE",
+        "Franquicia": "DC",
+        "IMDbURL": "https://www.imdb.com/title/tt32621773/reference/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_blue%2520beetle%2520",
+        "Imagen": [
+          {
+            "url": "https://eventos.ajra.es/images/events/att2lr4U0xH8vFjeO.webp"
           }
         ]
       }
@@ -550,21 +322,6 @@
       }
     },
     {
-      "id": "recksZlQRlkMF57nC",
-      "fields": {
-        "Titulo": "Tomb Raider: Legacy of Atlantis",
-        "FechaOrden": "2027-02-12",
-        "FechaEstrenoTexto": "12 DE FEBRERO DE 2027 (EE. UU.) · NINTENDO SWITCH 2",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://www.nintendo.com/us/whatsnew/nintendo-direct-reveals-metroid-ravenous-kirby-and-the-world-beyond-and-more-games-for-nintendo-switch-2-and-nintendo-switch/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attn00VbrZzcOQtmG.webp"
-          }
-        ]
-      }
-    },
-    {
       "id": "reclyT4dg58bK4HS6",
       "fields": {
         "Titulo": "Narnia: The Magician's Nephew",
@@ -575,6 +332,21 @@
         "Imagen": [
           {
             "url": "https://eventos.ajra.es/images/events/attwM47g5OrAdoFeQ.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "recksZlQRlkMF57nC",
+      "fields": {
+        "Titulo": "Tomb Raider: Legacy of Atlantis",
+        "FechaOrden": "2027-02-12",
+        "FechaEstrenoTexto": "12 DE FEBRERO DE 2027 (EE. UU.) · NINTENDO SWITCH 2",
+        "CategoriaEvento": "VIDEOJUEGOS",
+        "IMDbURL": "https://www.nintendo.com/us/whatsnew/nintendo-direct-reveals-metroid-ravenous-kirby-and-the-world-beyond-and-more-games-for-nintendo-switch-2-and-nintendo-switch/",
+        "Imagen": [
+          {
+            "url": "https://eventos.ajra.es/images/events/attn00VbrZzcOQtmG.webp"
           }
         ]
       }
@@ -1028,23 +800,6 @@
       }
     },
     {
-      "id": "recIUFEYHi2eKxOdk",
-      "fields": {
-        "Titulo": "Black Canary",
-        "FechaOrden": "2077-12-31",
-        "FechaEstrenoTexto": "SIN FECHA",
-        "CategoriaEvento": "CINEYTV",
-        "Tipo": "PELICULA",
-        "Franquicia": "DC",
-        "IMDbURL": "https://www.imdb.com/title/tt15268188/reference/",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/att3ohpGEf4GMIidl.webp"
-          }
-        ]
-      }
-    },
-    {
       "id": "recn1w41o6XqHyFn8",
       "fields": {
         "Titulo": "Batman: The Brave & The Bold",
@@ -1057,6 +812,23 @@
         "Imagen": [
           {
             "url": "https://eventos.ajra.es/images/events/attuo88hb0zvKHVMn.webp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "recIUFEYHi2eKxOdk",
+      "fields": {
+        "Titulo": "Black Canary",
+        "FechaOrden": "2077-12-31",
+        "FechaEstrenoTexto": "SIN FECHA",
+        "CategoriaEvento": "CINEYTV",
+        "Tipo": "PELICULA",
+        "Franquicia": "DC",
+        "IMDbURL": "https://www.imdb.com/title/tt15268188/reference/",
+        "Imagen": [
+          {
+            "url": "https://eventos.ajra.es/images/events/att3ohpGEf4GMIidl.webp"
           }
         ]
       }
@@ -1080,10 +852,10 @@
     }
   ],
   "meta": {
-    "source": "bootstrap",
-    "publishedAt": "2026-10-19T14:38:06.402Z",
-    "revision": "64e502ef10eaba1336e9ab2a56df6995eab3890c1fedf822b65a6fdae66f2c9c",
-    "syncedAt": "2026-10-19T14:38:06.402Z",
-    "stale": true
+    "source": "airtable",
+    "publishedAt": "2026-11-18T17:55:26.482Z",
+    "revision": "ea39daf328108fc7edd4d89323411ae49903fc1ffc3dab2a82d2b3e3fbb0e66b",
+    "syncedAt": "2026-11-18T17:55:26.482Z",
+    "stale": false
   }
 }
