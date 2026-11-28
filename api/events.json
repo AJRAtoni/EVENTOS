@@ -1,20 +1,6 @@
 {
   "records": [
     {
-      "id": "recKdDcmmT6p3RMrP",
-      "fields": {
-        "Titulo": "Grand Theft Auto VI",
-        "FechaOrden": "2026-11-19",
-        "CategoriaEvento": "VIDEOJUEGOS",
-        "IMDbURL": "https://youtu.be/VQRLujxTm3c?si=G0Unyvzz02urb8wG",
-        "Imagen": [
-          {
-            "url": "https://eventos.ajra.es/images/events/attcvMezFqDXd6zwE.webp"
-          }
-        ]
-      }
-    },
-    {
       "id": "recwUmvPJDvWSsCbu",
       "fields": {
         "Titulo": "The Hunger Games: Sunrise on the Reaping",
@@ -853,9 +839,9 @@
   ],
   "meta": {
     "source": "airtable",
-    "publishedAt": "2026-11-27T23:42:26.222Z",
-    "revision": "ea39daf328108fc7edd4d89323411ae49903fc1ffc3dab2a82d2b3e3fbb0e66b",
-    "syncedAt": "2026-11-27T23:42:26.222Z",
+    "publishedAt": "2026-11-28T07:19:19.788Z",
+    "revision": "c22afa5338efab487d0c14351a93f3dbd16ac14a1908e57cee16f150ce881387",
+    "syncedAt": "2026-11-28T07:19:19.788Z",
     "stale": false
   }
 }
